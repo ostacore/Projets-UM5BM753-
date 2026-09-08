@@ -1,6 +1,6 @@
 # Dictionnaire de données — Breast Cancer Wisconsin (Diagnostic)
 
-Fichier : `brutes/10_Breast_Cancer_Wisconsin_Diagnostic.csv` — 569 observations, 32 colonnes.
+Fichier : `raw/10_Breast_Cancer_Wisconsin_Diagnostic.csv` — 569 observations, 32 colonnes.
 
 | Colonne | Description |
 |---|---|
@@ -23,4 +23,4 @@ Caractéristiques de base :
 
 Exemple : `radius_mean`, `radius_se`, `radius_worst`.
 
-Aucun nettoyage n'a été appliqué à ce fichier (dossier `brutes/`). Toute version nettoyée/transformée doit être écrite dans `traitees/` avec une note décrivant les transformations effectuées.
+Aucun nettoyage n'a été appliqué à ce fichier (dossier `raw/`). Toute version nettoyée/transformée doit être écrite dans `processed/` avec une note décrivant les transformations effectuées.
