@@ -1,0 +1,62 @@
+{
+  "run_info": {
+    "random_state": 42,
+    "n_samples": 569,
+    "n_features": 30,
+    "train_size": 398,
+    "test_size": 171
+  },
+  "output_files": {
+    "figures": [
+      "figures/01_class_balance.png",
+      "figures/02_correlation_heatmap.png",
+      "figures/03_boxplots_mean_features.png",
+      "figures/04_pca_projection.png",
+      "figures/05_pca_scree.png",
+      "figures/06_roc_curves.png",
+      "figures/07_confusion_matrices.png",
+      "figures/08_elbow_silhouette.png",
+      "figures/09_all_clusters_vs_diagnosis.png",
+      "figures/10_spectral_vs_diagnosis.png"
+    ],
+    "tables": [
+      "tables/00_outlier_report.csv",
+      "tables/01_correlated_feature_pairs.csv",
+      "tables/02_supervised_cv_results.csv",
+      "tables/03_kmeans_elbow_silhouette.csv",
+      "tables/04_clustering_eval.csv"
+    ]
+  },
+  "top_results": {
+    "best_supervised_model_overall": {
+      "model": "Logistic Regression",
+      "avg_rank_across_5_metrics": 2.2,
+      "f1_mean": 0.9684,
+      "recall_mean": 0.9524,
+      "roc_auc_mean": 0.9926,
+      "runner_up": {
+        "model": "SVM (RBF)",
+        "avg_rank_across_5_metrics": 2.8,
+        "f1_mean": 0.9655,
+        "recall_mean": 0.9529,
+        "roc_auc_mean": 0.9927
+      }
+    },
+    "best_supervised_model_by_f1": {
+      "model": "Logistic Regression",
+      "f1_mean": 0.9684,
+      "recall_mean": 0.9524,
+      "roc_auc_mean": 0.9926
+    },
+    "best_supervised_model_by_roc_auc": {
+      "model": "AdaBoost",
+      "roc_auc_mean": 0.9943,
+      "recall_mean": 0.9324
+    },
+    "best_clustering_method_by_ari": {
+      "model": "Spectral",
+      "ARI_vs_diagnosis": 0.7608,
+      "silhouette": 0.3367
+    }
+  }
+}
