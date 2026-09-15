@@ -8,23 +8,24 @@
   },
   "output_files": {
     "figures": [
-      "figures/01_class_balance.png",
-      "figures/02_correlation_heatmap.png",
-      "figures/03_boxplots_mean_features.png",
-      "figures/04_pca_projection.png",
-      "figures/05_pca_scree.png",
-      "figures/06_roc_curves.png",
-      "figures/07_confusion_matrices.png",
-      "figures/08_elbow_silhouette.png",
-      "figures/09_all_clusters_vs_diagnosis.png",
-      "figures/10_spectral_vs_diagnosis.png"
+      "05_figures/01_class_balance.png",
+      "05_figures/02_correlation_heatmap.png",
+      "05_figures/03_boxplots_mean_features.png",
+      "05_figures/04_pca_projection.png",
+      "05_figures/05_pca_scree.png",
+      "05_figures/06_roc_curves.png",
+      "05_figures/07_confusion_matrices.png",
+      "05_figures/08_elbow_silhouette.png",
+      "05_figures/09_all_clusters_vs_diagnosis.png",
+      "05_figures/10_spectral_vs_diagnosis.png",
+      "05_figures/11_decision_tree.png"
     ],
     "tables": [
-      "tables/00_outlier_report.csv",
-      "tables/01_correlated_feature_pairs.csv",
-      "tables/02_supervised_cv_results.csv",
-      "tables/03_kmeans_elbow_silhouette.csv",
-      "tables/04_clustering_eval.csv"
+      "04_results/tables/00_outlier_report.csv",
+      "04_results/tables/01_correlated_feature_pairs.csv",
+      "04_results/tables/02_supervised_cv_results.csv",
+      "04_results/tables/03_kmeans_elbow_silhouette.csv",
+      "04_results/tables/04_clustering_eval.csv"
     ]
   },
   "top_results": {
