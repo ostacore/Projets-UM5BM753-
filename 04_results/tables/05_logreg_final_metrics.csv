@@ -1,0 +1,2 @@
+,accuracy,precision,recall,f1,f2,roc_auc
+Régression Logistique (features 4.3),0.9824561403508771,1.0,0.953125,0.976,0.9621451104100947,0.995911214953271
