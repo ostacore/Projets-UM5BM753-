@@ -1,0 +1,4 @@
+model,silhouette,ARI_vs_diagnosis
+Spectral,0.3367,0.7608
+K-Means,0.3434,0.6536
+Agglomerative (ward),0.3394,0.575

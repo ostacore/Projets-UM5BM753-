@@ -1,0 +1,4 @@
+model,accuracy_mean,precision_mean,recall_mean,f1_mean,f2_mean,roc_auc_mean,avg_rank_across_6_metrics
+Logistic Regression,0.9773,0.9866,0.9524,0.9684,0.9586,0.9926,2.0
+SVM (RBF),0.9749,0.98,0.9529,0.9655,0.9577,0.9927,2.67
+AdaBoost,0.9674,0.9808,0.9324,0.9543,0.9406,0.9943,3.67

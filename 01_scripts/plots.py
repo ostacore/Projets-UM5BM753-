@@ -10,6 +10,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.decomposition import PCA
+from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.metrics import roc_curve, auc, confusion_matrix, ConfusionMatrixDisplay
 
 
@@ -235,5 +236,24 @@ def plot_all_clusters_vs_diagnosis(X_pca_2d: np.ndarray, y_true: np.ndarray,
 
     fig.suptitle("True diagnosis vs. predicted clusters, all methods")
     fig.tight_layout(rect=[0, 0, 1, 0.96])
+    fig.savefig(out_path, dpi=150)
+    plt.show()
+
+
+def plot_decision_tree_structure(X_tr, y_tr, feature_list: list, out_path: str,
+                                  max_depth: int = 3, random_state: int = 42):
+    """Fit a depth-limited Decision Tree on the train set and plot its structure.
+
+    Limited to max_depth=3 purely for readability: the unrestricted tree scored in
+    cross-validation has no depth limit and is too large to display legibly. This
+    illustrates the model's interpretability, not its cross-validated performance.
+    """
+    tree_clf = DecisionTreeClassifier(max_depth=max_depth, random_state=random_state)
+    tree_clf.fit(X_tr, y_tr)
+    fig, ax = plt.subplots(figsize=(16, 8))
+    plot_tree(tree_clf, feature_names=feature_list, class_names=["Benign", "Malignant"],
+              filled=True, rounded=True, fontsize=8, ax=ax)
+    ax.set_title(f"Decision Tree structure (max_depth={max_depth}, for readability only)")
+    fig.tight_layout()
     fig.savefig(out_path, dpi=150)
     plt.show()
