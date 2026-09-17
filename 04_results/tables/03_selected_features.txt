@@ -1,0 +1,6 @@
+radius_mean
+concave_points_mean
+radius_se
+texture_worst
+concave_points_worst
+symmetry_worst
