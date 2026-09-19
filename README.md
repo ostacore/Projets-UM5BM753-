@@ -8,13 +8,12 @@ Projet réalisé dans le cadre de l'UE Supervised and Unsupervised Learning for 
 
 ## Structure du dossier
 Structure alignée sur la méthodologie AIDA du cours ("Working Effectively on an AIDA Project", diapo 7) :
-- `01_scripts/` : fonctions Python réutilisables, importées par les notebooks (à peupler à partir du prochain notebook soumis — `01_Milestone1.ipynb` reste un brouillon autonome)
+- `01_scripts/` : fonctions Python réutilisables, importées par les notebooks
 - `02_data/` : fichiers de données
   - `raw/` : fichiers sources inchangés
   - `processed/` : fichiers nettoyés prêts à l'emploi
-  - `data_dictionary.md` : description des colonnes
-- `03_notebooks/` : notebooks Jupyter, numérotés selon l'ordre d'exécution
-- `04_results/` : tableaux exportés (`tables/`), `run_summary.json`
+- `03_notebooks/` : les 6 notebooks du rapport final, numérotés selon l'ordre d'exécution (01_Data_QC → 06_Zoom_Spectral_Clustering)
+- `04_results/` : tableaux exportés (`.csv`), directement à plat (pas de sous-dossier)
 - `05_figures/` : graphiques exportés
 - `06_report/` : notes de synthèse, présentations, rapport final
 
@@ -24,4 +23,5 @@ Structure alignée sur la méthodologie AIDA du cours ("Working Effectively on a
 3. Les productions sont écrites dans `04_results/` (tableaux) et `05_figures/` (graphiques).
 
 ## Notes
-- `01_Milestone1.ipynb` et les autres notebooks de `03_notebooks/` sont des brouillons de travail. Le notebook final soumis au professeur suivra la structure recommandée par la méthodologie AIDA : fonctions réutilisables extraites vers `01_scripts/`, notebook réduit à l'histoire scientifique (Context → Gap → Question → Data → Approach → Results → Conclusion).
+- Les brouillons de travail (`00_Final_Report_.ipynb` historique, `01_Milestone1.ipynb`, et les drafts des coéquipiers) sont rangés dans `autres/`, hors de `03_notebooks/` qui ne contient que les notebooks destinés à master.
+- `[TODO]` lister ici les principaux fichiers produits par chaque notebook (tables dans `04_results/`, figures dans `05_figures/`), pour remplacer l'ancien `run_summary.json` (retiré : il datait de `01_Milestone1.ipynb` et n'était plus synchronisé avec le pipeline actuel).
