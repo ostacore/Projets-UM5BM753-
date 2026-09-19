@@ -1,4 +1,4 @@
-"""The exact set of baseline classifiers screened in 01_Milestone1.ipynb.
+"""The set of baseline classifiers used for the initial supervised screening.
 
 Kept separate from evaluation.py: this file only says *which* models and
 hyperparameters to compare, not *how* to evaluate them.
@@ -15,14 +15,9 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis, QuadraticD
 def get_baseline_classifiers(random_state: int = 42) -> dict:
     """Return a dictionary of standard baseline classifiers.
 
-    Three SVM kernels are compared (linear, RBF, polynomial) since the PCA projection
-    in Section 3 suggested a boundary close to linear, worth checking directly against
-    the more flexible RBF and polynomial kernels rather than assuming RBF is best.
-    LDA/QDA and AdaBoost are added to cover families not otherwise represented: a
-    generative linear model (LDA, shared covariance) paired with its quadratic
-    counterpart (QDA, per-class covariance), and sequential boosting. A single Decision
-    Tree is added alongside Random Forest and AdaBoost so the benefit of ensembling
-    (bagging/boosting) over one interpretable tree can be measured directly.
+    Covers linear, kernel, generative and ensemble families -- including a plain
+    Decision Tree alongside Random Forest/AdaBoost to measure the benefit of
+    ensembling directly.
     """
     return {
         "Logistic Regression": LogisticRegression(max_iter=5000, random_state=random_state),
@@ -34,7 +29,7 @@ def get_baseline_classifiers(random_state: int = 42) -> dict:
         "Random Forest": RandomForestClassifier(n_estimators=300, random_state=random_state),
         "LDA": LinearDiscriminantAnalysis(),
         "QDA": QuadraticDiscriminantAnalysis(reg_param=0.1),  # unregularized QDA fails:
-        # covariance matrix of the benign class is not full rank (Section 3's
-        # correlation heatmap shows several |r| > 0.95 feature pairs)
+        # covariance matrix of the benign class is not full rank (several feature
+        # pairs have |r| > 0.95, see the correlation heatmap)
         "AdaBoost": AdaBoostClassifier(n_estimators=200, random_state=random_state),
     }

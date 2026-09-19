@@ -1,21 +1,18 @@
-"""Reusable model-evaluation functions, shared across notebooks.
-
-`cross_validate_classifiers` and `run_kmeans_range` are extracted as-is from
-01_Milestone1.ipynb (screening stage: many models, cross-validated).
-`evaluate_classifier` is new: a single-model, train/test evaluation used by the
-"zoom" analyses (one tuned model, evaluated once on the held-out test set) rather
-than by the screening stage.
+"""Score an already-decided classifier or clustering: cross-validated screening,
+single-model test-set metrics, and clustering metrics vs. the true diagnosis.
+Choosing a hyperparameter first (number of clusters, DBSCAN's eps) is a
+different concern, handled in cluster_selection.py instead.
 """
 
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import cross_validate, StratifiedKFold
-from sklearn.cluster import KMeans
 from sklearn.metrics import (silhouette_score, accuracy_score, precision_score,
                               recall_score, f1_score, fbeta_score, roc_auc_score,
                               make_scorer, homogeneity_score, completeness_score,
                               v_measure_score, adjusted_rand_score)
 
+# Supervised models
 
 def cross_validate_classifiers(classifiers: dict, X, y, cv_folds: int = 10,
                                 random_state: int = 42) -> pd.DataFrame:
@@ -23,7 +20,7 @@ def cross_validate_classifiers(classifiers: dict, X, y, cv_folds: int = 10,
 
     F2 (beta=2) is included alongside F1: it weighs recall twice as heavily as
     precision, matching this project's clinical priority of not missing a
-    malignant case (Section 5.2 of Milestone 1) better than F1's equal weighting.
+    malignant case better than F1's equal weighting.
     """
     cv = StratifiedKFold(n_splits=cv_folds, shuffle=True, random_state=random_state)
     scoring = {
@@ -46,6 +43,23 @@ def cross_validate_classifiers(classifiers: dict, X, y, cv_folds: int = 10,
     return pd.DataFrame(rows).sort_values("roc_auc_mean", ascending=False)
 
 
+def cross_validate_classifiers_folds(classifiers: dict, X, y, metric: str = "recall",
+                                      cv_folds: int = 10, random_state: int = 42) -> pd.DataFrame:
+    """Same cross-validation as cross_validate_classifiers, but return the raw
+    per-fold scores for one metric (long format: one row per model per fold),
+    for a boxplot of score spread across folds instead of just the mean.
+    """
+    cv = StratifiedKFold(n_splits=cv_folds, shuffle=True, random_state=random_state)
+    scorer = make_scorer(fbeta_score, beta=2) if metric == "f2" else metric
+
+    rows = []
+    for name, clf in classifiers.items():
+        scores = cross_validate(clf, X, y, cv=cv, scoring=scorer)
+        for fold_score in scores["test_score"]:
+            rows.append({"model": name, metric: fold_score})
+    return pd.DataFrame(rows)
+
+
 def evaluate_classifier(model, X_train, y_train, X_test, y_test) -> dict:
     """Fit one model and report the same 6 metrics as the screening stage, on the
     held-out test set (accuracy, precision, recall, f1, f2, roc_auc). For a single
@@ -63,17 +77,7 @@ def evaluate_classifier(model, X_train, y_train, X_test, y_test) -> dict:
         "roc_auc": roc_auc_score(y_test, y_score),
     }
 
-
-def run_kmeans_range(X, k_range=range(2, 8), random_state: int = 42) -> pd.DataFrame:
-    """Run K-Means for a range of k values and report inertia and silhouette score."""
-    rows = []
-    for k in k_range:
-        km = KMeans(n_clusters=k, n_init=10, random_state=random_state)
-        labels = km.fit_predict(X)
-        sil = silhouette_score(X, labels)
-        rows.append({"k": k, "inertia": km.inertia_, "silhouette": sil})
-    return pd.DataFrame(rows)
-
+# Unsupervised models
 
 def evaluate_clusterers(clusterers: dict, X, y_true) -> pd.DataFrame:
     """Evaluate clustering algorithms against the true diagnosis labels.

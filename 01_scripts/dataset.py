@@ -1,8 +1,4 @@
-"""Loading and quality-checking the dataset, shared across notebooks.
-
-Kept identical to the logic validated in 01_Milestone1.ipynb so every notebook
-in this project loads, labels and quality-checks the dataset the same way.
-"""
+"""Load the raw dataset and check its quality: missing values, duplicates, outliers."""
 
 import pandas as pd
 

@@ -1,8 +1,5 @@
-"""Reusable plotting functions, shared across notebooks.
-
-Extracted from 01_Milestone1.ipynb (where every one of these was already validated)
-so later notebooks reuse the same plot instead of redefining a slightly different
-version each time.
+"""Plotting functions for this project's figures: data exploration, supervised-model
+results (ROC, confusion matrix, decision tree), and clustering results.
 """
 
 import numpy as np
@@ -13,7 +10,7 @@ from sklearn.decomposition import PCA
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.metrics import roc_curve, auc, confusion_matrix, ConfusionMatrixDisplay
 
-
+# Exploratory data analysis
 def plot_class_balance(dframe: pd.DataFrame, out_path: str):
     """Bar plot of the diagnosis class distribution."""
     fig, ax = plt.subplots(figsize=(5, 4))
@@ -119,6 +116,7 @@ def plot_pca_scree(X_scaled: np.ndarray, out_path: str, n_components: int = 15,
     plt.show()
     return cum_var
 
+# Supervised models 
 
 def plot_roc_curves(classifiers: dict, X_tr, y_tr, X_te, y_te, out_path: str,
                      title: str = "ROC curves (held-out test set)"):
@@ -135,6 +133,22 @@ def plot_roc_curves(classifiers: dict, X_tr, y_tr, X_te, y_te, out_path: str,
     ax.set_ylabel("True Positive Rate")
     ax.set_title(title)
     ax.legend(loc="lower right", fontsize=8)
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=150)
+    plt.show()
+
+
+def plot_cv_score_boxplot(cv_scores: pd.DataFrame, metric: str, out_path: str,
+                           title: str = None):
+    """Boxplot of per-fold cross-validation scores, one box per model. Shows the
+    spread across folds, not just the mean shown in the summary table."""
+    fig, ax = plt.subplots(figsize=(9, 5))
+    order = cv_scores.groupby("model")[metric].median().sort_values(ascending=False).index
+    sns.boxplot(data=cv_scores, x="model", y=metric, order=order, hue="model",
+                palette="Blues_r", legend=False, ax=ax)
+    ax.set_xticks(range(len(order)))
+    ax.set_xticklabels(order, rotation=45, ha="right")
+    ax.set_title(title or f"{metric} across CV folds, by model")
     fig.tight_layout()
     fig.savefig(out_path, dpi=150)
     plt.show()
@@ -158,6 +172,7 @@ def plot_confusion_matrices(classifiers: dict, X_tr, y_tr, X_te, y_te, out_path:
     fig.savefig(out_path, dpi=150)
     plt.show()
 
+# Unsupervised models 
 
 def plot_elbow_and_silhouette(kmeans_results: pd.DataFrame, out_path: str):
     """Side-by-side elbow (inertia) and silhouette score plots across k."""
@@ -171,6 +186,20 @@ def plot_elbow_and_silhouette(kmeans_results: pd.DataFrame, out_path: str):
     axes[1].set_xlabel("Number of clusters (k)")
     axes[1].set_ylabel("Silhouette score")
     axes[1].set_title("Silhouette analysis")
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=150)
+    plt.show()
+
+
+def plot_silhouette_by_k(results: pd.DataFrame, out_path: str,
+                          title: str = "Silhouette analysis"):
+    """Silhouette score across a range of k, single panel (for methods without
+    centroids: Agglomerative, Spectral -- no inertia to show alongside it)."""
+    fig, ax = plt.subplots(figsize=(6, 4))
+    ax.plot(results["k"], results["silhouette"], marker="o", color="#C44E52")
+    ax.set_xlabel("Number of clusters (k)")
+    ax.set_ylabel("Silhouette score")
+    ax.set_title(title)
     fig.tight_layout()
     fig.savefig(out_path, dpi=150)
     plt.show()
@@ -217,11 +246,8 @@ def plot_all_clusters_vs_diagnosis(X_pca_2d: np.ndarray, y_true: np.ndarray,
     axes[0].set_title("True diagnosis")
     axes[0].legend(fontsize=8, loc="best", title=None)
 
-    # Cluster label numbers (0, 1, ...) are arbitrary integers assigned by each
-    # algorithm -- they carry no fixed correspondence to malignant/benign, and the
-    # same number can mean a different group from one algorithm to the next. Each
-    # panel gets its own legend so the color <-> number mapping is at least
-    # unambiguous *within* that panel.
+    # Each panel gets its own legend: cluster numbers are arbitrary per algorithm,
+    # not comparable across panels.
     for i, (name, labels) in enumerate(cluster_labels_dict.items(), start=1):
         sns.scatterplot(x=X_pca_2d[:, 0], y=X_pca_2d[:, 1], hue=labels,
                          palette="Set2", alpha=0.8, ax=axes[i])
@@ -240,14 +266,29 @@ def plot_all_clusters_vs_diagnosis(X_pca_2d: np.ndarray, y_true: np.ndarray,
     plt.show()
 
 
+def plot_ari_barplot(clustering_eval: pd.DataFrame, out_path: str,
+                      title: str = "ARI vs. true diagnosis, by clustering method"):
+    """Bar chart of ARI vs. the true diagnosis, one bar per clustering method.
+    ARI (not silhouette) is what actually drives the method choice here: a high
+    silhouette can still mean a poor match to the true diagnosis (e.g. one giant
+    cluster and a tiny one), so silhouette alone is not shown for comparison."""
+    ordered = clustering_eval.sort_values("ARI_vs_diagnosis", ascending=False)
+    fig, ax = plt.subplots(figsize=(9, 5))
+    sns.barplot(data=ordered, x="model", y="ARI_vs_diagnosis", hue="model",
+                palette="Blues_r", legend=False, ax=ax)
+    ax.set_xticks(range(len(ordered)))
+    ax.set_xticklabels(ordered["model"], rotation=45, ha="right")
+    ax.set_ylabel("ARI vs. true diagnosis")
+    ax.set_title(title)
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=150)
+    plt.show()
+
+
 def plot_decision_tree_structure(X_tr, y_tr, feature_list: list, out_path: str,
                                   max_depth: int = 3, random_state: int = 42):
-    """Fit a depth-limited Decision Tree on the train set and plot its structure.
-
-    Limited to max_depth=3 purely for readability: the unrestricted tree scored in
-    cross-validation has no depth limit and is too large to display legibly. This
-    illustrates the model's interpretability, not its cross-validated performance.
-    """
+    """Fit a depth-limited Decision Tree and plot its structure (max_depth is
+    capped for readability only, not used for the model's real performance)."""
     tree_clf = DecisionTreeClassifier(max_depth=max_depth, random_state=random_state)
     tree_clf.fit(X_tr, y_tr)
     fig, ax = plt.subplots(figsize=(16, 8))
