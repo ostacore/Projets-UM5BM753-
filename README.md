@@ -13,7 +13,7 @@ Structure alignée sur la méthodologie AIDA du cours ("Working Effectively on a
   - `raw/` : fichiers sources inchangés
   - `processed/` : fichiers nettoyés prêts à l'emploi
 - `03_notebooks/` : les 6 notebooks du rapport final, numérotés selon l'ordre d'exécution (01_Data_QC → 06_Zoom_Spectral_Clustering)
-- `04_results/` : tableaux exportés (`.csv`), directement à plat (pas de sous-dossier)
+- `04_results/` : tableaux exportés (`.csv`)
 - `05_figures/` : graphiques exportés
 - `06_report/` : notes de synthèse, présentations, rapport final
 
