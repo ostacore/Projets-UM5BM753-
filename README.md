@@ -53,7 +53,7 @@ Project"):
   - `raw/`: the original, unmodified source file.
   - `processed/`: the train/test sets restricted to the selected features, exported by
     `04_Feature_Selection.ipynb` and reused by the two "zoom" notebooks.
-- `03_notebooks/`: the 6 notebooks of the final analysis, numbered in execution order:
+- `03_notebooks/`: the 7 notebooks of the final analysis, numbered in execution order:
   1. `01_Data_QC.ipynb`: loads the raw data and checks it (missing values,
      duplicates, outliers).
   2. `02_EDA.ipynb`: first visual look at the data (class balance, correlation,
@@ -61,25 +61,42 @@ Project"):
   3. `03_Initial_Screening.ipynb`: screens 10 supervised classifiers and 6
      clustering methods, to shortlist one of each.
   4. `04_Feature_Selection.ipynb`: reduces the 30 features to a small,
-     non-redundant subset, reused by the two notebooks below.
+     non-redundant subset, reused by the notebooks below.
   5. `05_Zoom_LogReg.ipynb`: tunes and evaluates the final Logistic Regression
      model.
   6. `06_Zoom_Spectral_Clustering.ipynb`: tunes and evaluates the final Spectral
      Clustering model.
+  7. `07_Prognostic_Data_Test.ipynb`: checks whether the tuned model still
+     predicts malignant on an external cohort (WPBC).
 - `04_results/`: exported tables (`.csv`).
 - `05_figures/`: exported figures.
 - `06_report/`: written deliverables (slide exports, notes).
 
 ## How to run
 
-1. Create and activate the project's virtual environment (`requirements.txt`).
+1. Create and activate the project's virtual environment. Two options are provided,
+   depending on which tool you use:
+   - **uv** (`requirements.txt`, pip-based):
+     ```
+     uv venv --python 3.11 .venv
+     uv pip install --python .venv -r requirements.txt
+     ```
+   - **conda** (`environment.yml`):
+     ```
+     conda env create -f environment.yml
+     conda activate breast-cancer-diagnosis
+     ```
+
+   Both install the exact same packages: `environment.yml` only sets up Python 3.11
+   and pip, then installs everything from `requirements.txt`, so there is a single
+   source of truth for package versions.
 2. Run the notebooks in `03_notebooks/` in numbered order.
 3. Outputs are written to `04_results/` (tables) and `05_figures/` (figures).
 
 ## Deliverables
 
 The Python component's deliverable is the 6 notebooks above, plus an oral
-presentation (10 minutes, followed by 10 minutes of questions). 
+presentation (10 minutes, followed by 10 minutes of questions).
 
 ## Team
 
