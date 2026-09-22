@@ -1,0 +1,19 @@
+config,affinity,assign_labels,param,silhouette,ARI_vs_diagnosis
+rbf | gamma=10.0 | kmeans,rbf,kmeans,gamma=10.0,0.6628520368494655,0.0048283446965917305
+rbf | gamma=1.0 | cluster_qr,rbf,cluster_qr,gamma=1.0,0.6628520368494655,0.0048283446965917305
+rbf | gamma=1.0 | kmeans,rbf,kmeans,gamma=1.0,0.6628520368494655,0.0048283446965917305
+rbf | gamma=0.1 | kmeans,rbf,kmeans,gamma=0.1,0.6628520368494655,0.0048283446965917305
+rbf | gamma=10.0 | cluster_qr,rbf,cluster_qr,gamma=10.0,0.5808802251777487,0.012239093455411533
+rbf | gamma=0.1 | cluster_qr,rbf,cluster_qr,gamma=0.1,0.40644348269578784,0.6574719357715447
+rbf | gamma=0.01 | kmeans,rbf,kmeans,gamma=0.01,0.40250105871553377,0.7729537093457027
+rbf | gamma=0.01 | cluster_qr,rbf,cluster_qr,gamma=0.01,0.40078655654192397,0.7919279745425781
+nearest_neighbors | nn=10 | kmeans,nearest_neighbors,kmeans,n_neighbors=10,0.39895790593300334,0.7919940030906254
+nearest_neighbors | nn=5 | kmeans,nearest_neighbors,kmeans,n_neighbors=5,0.3985250459190075,0.7668265885718183
+nearest_neighbors | nn=20 | kmeans,nearest_neighbors,kmeans,n_neighbors=20,0.39636091166823184,0.7857826638368578
+nearest_neighbors | nn=15 | kmeans,nearest_neighbors,kmeans,n_neighbors=15,0.39636091166823184,0.7857826638368578
+nearest_neighbors | nn=30 | kmeans,nearest_neighbors,kmeans,n_neighbors=30,0.39558331179064316,0.7921219987183666
+nearest_neighbors | nn=15 | cluster_qr,nearest_neighbors,cluster_qr,n_neighbors=15,0.3939409859451109,0.7921839707192342
+nearest_neighbors | nn=20 | cluster_qr,nearest_neighbors,cluster_qr,n_neighbors=20,0.39332325556740905,0.8112762026945097
+nearest_neighbors | nn=10 | cluster_qr,nearest_neighbors,cluster_qr,n_neighbors=10,0.39280165602343875,0.7985434511202946
+nearest_neighbors | nn=5 | cluster_qr,nearest_neighbors,cluster_qr,n_neighbors=5,0.39250808712874746,0.8112762026945097
+nearest_neighbors | nn=30 | cluster_qr,nearest_neighbors,cluster_qr,n_neighbors=30,0.38944313093400285,0.7986583996882705
