@@ -17,26 +17,37 @@ nuclei, more variation in nuclear size and shape, and disrupted chromatin patter
 This nuclear atypia is a well-established cytological sign of malignancy, already used
 in pathological assessment [1, 2].
 
-The **Breast Cancer Wisconsin (Diagnostic)** dataset quantifies this signal. It
-contains 569 cases from digitized images of fine-needle aspirate (FNA) biopsies of
-breast masses. For each case, the contour and texture of the cell nuclei were
-converted into 10 base measurements (radius, texture, perimeter, area, smoothness,
-compactness, concavity, concave points, symmetry, fractal dimension), each summarized by its mean, standard error, and "worst" value (the average of the 3 most extreme cells), giving 30 continuous features [3, 4]. Larger, more irregular, or more
-heterogeneous nuclei are plausible indicators of malignancy, but these features remain
-image-derived phenotypic markers, not a direct readout of a specific mutation or tumor subtype.
+This is exactly what a pathologist looks for when diagnosing a breast mass: a biopsy
+(typically fine-needle aspiration) is taken, the slide is imaged, and its cell nuclei
+are read against these established cytological criteria. This reading is human,
+however: it is not instantaneous, and it is not perfectly reproducible. In a large US
+study, pathologists interpreting the same breast biopsy slides agreed with the
+reference diagnosis only 75.3% of the time overall, dropping to 48% for atypical
+hyperplasia, one of the more ambiguous, borderline categories [3].
+
+A fast, quantitative reading of the same nuclear features is therefore worth testing
+as a second opinion, not a replacement. The **Breast Cancer Wisconsin (Diagnostic)**
+dataset quantifies exactly this signal. It contains 569 cases from digitized images of
+fine-needle aspirate (FNA) biopsies of breast masses. For each case, the contour and
+texture of the cell nuclei were converted into 10 base measurements (radius, texture,
+perimeter, area, smoothness, compactness, concavity, concave points, symmetry, fractal
+dimension), each summarized by its mean, standard error, and "worst" value (the average
+of the 3 most extreme cells), giving 30 continuous features [4, 5]. Larger, more
+irregular, or more heterogeneous nuclei are plausible indicators of malignancy, but
+these features remain image-derived phenotypic markers, not a direct readout of a
+specific mutation or tumor subtype.
 
 ### The questions this project asks
 
-The goal is not to replace the pathologist, but to test whether these image-derived
-measurements can support a second reading:
+The hypothesis behind this project is that malignant transformation leaves a nuclear
+signature distinct enough to help separate malignant from benign cases. The goal is not
+to replace the pathologist, but to test whether these image-derived measurements can
+support the diagnosis: a second, quantitative reading, particularly useful when the
+visual assessment is ambiguous. This is tested with two approaches:
 
-- **Q1 (supervised):** Can the 30 nuclear features reproduce the known diagnosis, and
-  can a reasonably interpretable model identify which measurements contribute most to that distinction?
-- **Q2 (unsupervised):** Without ever using the diagnostic labels, do the samples
-  organize naturally into groups that reflect the benign/malignant divide?
-- **Q3 (feature relevance):** Many size-related measurements are strongly correlated.
-  Reducing this redundancy can reveal which dimensions of nuclear phenotype carry
-  distinct diagnostic information.
+- **Q1 (supervised approach):** Can the 30 nuclear features reproduce the known diagnosis, and, once the redundant ones are removed, which of the remaining measurements matter most for that distinction?
+- **Q2 (unsupervised approach):** Without ever using the diagnostic labels, do the
+  samples organize naturally into groups that reflect the benign/malignant divide?
 
 Recall and the F2-score (which weighs recall more than precision) get particular
 attention throughout, since missing a malignant case is far more costly than flagging
@@ -76,6 +87,7 @@ Project"):
 
 1. Create and activate the project's virtual environment. Two options are provided,
    depending on which tool you use:
+
    - **uv** (`requirements.txt`, pip-based):
      ```
      uv venv --python 3.11 .venv
@@ -110,7 +122,11 @@ Ann-Solène Adelson, Anaïs Hluszko, Corentin Osta.
    of the nuclear envelope in breast cancer: a new approach to an old problem. *Journal
    of Cellular and Molecular Medicine*, 12(1), 209–218.
    https://doi.org/10.1111/j.1582-4934.2007.00176.x
-3. Street, W. N., Wolberg, W. H., & Mangasarian, O. L. (1993). Nuclear feature
+3. Elmore, J. G., Longton, G. M., Carney, P. A., Geller, B. M., Onega, T., Tosteson, A. N. A.,
+   Nelson, H. D., Pepe, M. S., Allison, K. H., Schnitt, S. J., O'Malley, F. P., & Weaver, D. L.
+   (2015). Diagnostic concordance among pathologists interpreting breast biopsy specimens.
+   *JAMA*, 313(11), 1122–1132. https://doi.org/10.1001/jama.2015.1405
+4. Street, W. N., Wolberg, W. H., & Mangasarian, O. L. (1993). Nuclear feature
    extraction for breast tumor diagnosis. *Proceedings of SPIE*, 1905, 861–870.
-4. UCI Machine Learning Repository. *Breast Cancer Wisconsin (Diagnostic)*.
+5. UCI Machine Learning Repository. *Breast Cancer Wisconsin (Diagnostic)*.
    https://doi.org/10.24432/C5DW2B
