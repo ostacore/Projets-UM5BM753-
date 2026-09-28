@@ -56,9 +56,6 @@ any result here would need external validation before real clinical use.
 
 ## Project structure
 
-Structure aligned with the course's AIDA methodology ("Working Effectively on an AIDA
-Project"):
-
 - `01_scripts/`: reusable Python functions, imported by the notebooks.
 - `02_data/`: data files.
   - `raw/`: the original, unmodified source file.
@@ -107,7 +104,7 @@ Project"):
 
 ## Deliverables
 
-The Python component's deliverable is the 6 notebooks above, plus an oral
+The Python component's deliverable is the 7 notebooks above, plus an oral
 presentation (10 minutes, followed by 10 minutes of questions).
 
 ## Team
