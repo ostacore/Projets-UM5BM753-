@@ -7,7 +7,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.decomposition import PCA
-from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.metrics import roc_curve, auc, confusion_matrix, ConfusionMatrixDisplay
 
 # Exploratory data analysis
@@ -174,23 +173,6 @@ def plot_confusion_matrices(classifiers: dict, X_tr, y_tr, X_te, y_te, out_path:
 
 # Unsupervised models 
 
-def plot_elbow_and_silhouette(kmeans_results: pd.DataFrame, out_path: str):
-    """Side-by-side elbow (inertia) and silhouette score plots across k."""
-    fig, axes = plt.subplots(1, 2, figsize=(11, 4))
-    axes[0].plot(kmeans_results["k"], kmeans_results["inertia"], marker="o")
-    axes[0].set_xlabel("Number of clusters (k)")
-    axes[0].set_ylabel("Inertia")
-    axes[0].set_title("Elbow method")
-
-    axes[1].plot(kmeans_results["k"], kmeans_results["silhouette"], marker="o", color="#C44E52")
-    axes[1].set_xlabel("Number of clusters (k)")
-    axes[1].set_ylabel("Silhouette score")
-    axes[1].set_title("Silhouette analysis")
-    fig.tight_layout()
-    fig.savefig(out_path, dpi=150)
-    plt.show()
-
-
 def plot_silhouette_by_k(results: pd.DataFrame, out_path: str,
                           title: str = "Silhouette analysis"):
     """Silhouette score across a range of k, single panel (for methods without
@@ -285,16 +267,71 @@ def plot_ari_barplot(clustering_eval: pd.DataFrame, out_path: str,
     plt.show()
 
 
-def plot_decision_tree_structure(X_tr, y_tr, feature_list: list, out_path: str,
-                                  max_depth: int = 3, random_state: int = 42):
-    """Fit a depth-limited Decision Tree and plot its structure (max_depth is
-    capped for readability only, not used for the model's real performance)."""
-    tree_clf = DecisionTreeClassifier(max_depth=max_depth, random_state=random_state)
-    tree_clf.fit(X_tr, y_tr)
-    fig, ax = plt.subplots(figsize=(16, 8))
-    plot_tree(tree_clf, feature_names=feature_list, class_names=["Benign", "Malignant"],
-              filled=True, rounded=True, fontsize=8, ax=ax)
-    ax.set_title(f"Decision Tree structure (max_depth={max_depth}, for readability only)")
+def plot_ari_comparison_bar(dframe: pd.DataFrame, category_col: str, value_col: str,
+                             colors: list, title: str, out_path: str,
+                             figsize: tuple = (6, 4)):
+    """Bar chart of ARI vs. true diagnosis, one bar per named configuration
+    (e.g. feature set, or affinity choice), to compare them at a glance."""
+    fig, ax = plt.subplots(figsize=figsize)
+    ax.bar(dframe[category_col], dframe[value_col], color=colors)
+    ax.set_ylabel("ARI vs. true diagnosis")
+    ax.set_title(title)
     fig.tight_layout()
-    fig.savefig(out_path, dpi=150)
+    fig.savefig(out_path)
+    plt.show()
+
+
+def plot_topology_sweep(knn_results: pd.DataFrame, rbf_results: pd.DataFrame, out_path: str):
+    """Silhouette (label-free) vs. ARI (uses true diagnosis) across the k-NN and RBF
+    hyperparameters, to check if the two metrics pick the same best setting."""
+    fig, axes = plt.subplots(1, 2, figsize=(13, 5))
+    axes[0].plot(knn_results["n_neighbors"], knn_results["silhouette"], marker='o', label="Silhouette")
+    axes[0].plot(knn_results["n_neighbors"], knn_results["ARI_vs_diagnosis"], marker='o', label="ARI vs. diagnosis")
+    axes[0].set_title("k-NN affinity")
+    axes[0].set_xlabel("n_neighbors")
+    axes[0].legend()
+    axes[0].grid(True, linestyle='--', alpha=0.5)
+
+    axes[1].plot(rbf_results["gamma"], rbf_results["silhouette"], marker='o', label="Silhouette")
+    axes[1].plot(rbf_results["gamma"], rbf_results["ARI_vs_diagnosis"], marker='o', label="ARI vs. diagnosis")
+    axes[1].set_xscale("log")
+    axes[1].set_title("RBF affinity")
+    axes[1].set_xlabel("gamma (log scale)")
+    axes[1].legend()
+    axes[1].grid(True, which='both', linestyle='--', alpha=0.5)
+
+    fig.suptitle("Spectral Clustering: silhouette vs. ARI across affinity hyperparameters (selected features)")
+    fig.tight_layout()
+    fig.savefig(out_path)
+    plt.show()
+
+
+def plot_topology_comparison(final_models: dict, X_fit: np.ndarray, X_pca_2d: np.ndarray,
+                              y_true: np.ndarray, out_path: str):
+    """Fit each given topology (e.g. best k-NN, best RBF) and plot its partition,
+    on the 2D PCA projection, next to the true diagnosis for visual comparison."""
+    from sklearn.metrics import silhouette_score, adjusted_rand_score
+
+    fig, axes = plt.subplots(1, 3, figsize=(18, 5))
+    palette = {0: "#4C72B0", 1: "#C44E52"}
+
+    for ax, (name, model) in zip(axes[:2], final_models.items()):
+        labels = model.fit_predict(X_fit)
+        sil = silhouette_score(X_fit, labels)
+        ari = adjusted_rand_score(y_true, labels)
+        sns.scatterplot(x=X_pca_2d[:, 0], y=X_pca_2d[:, 1], hue=labels,
+                         palette=palette, ax=ax, legend=False, alpha=0.7, edgecolor='k')
+        ax.set_title(f"{name}\nSilhouette={sil:.3f} | ARI={ari:.3f}")
+        ax.set_xlabel("PC1")
+        ax.set_ylabel("PC2")
+
+    sns.scatterplot(x=X_pca_2d[:, 0], y=X_pca_2d[:, 1], hue=y_true,
+                     palette=palette, ax=axes[2], alpha=0.7, edgecolor='k')
+    axes[2].set_title("True diagnosis")
+    axes[2].set_xlabel("PC1")
+    axes[2].set_ylabel("PC2")
+
+    fig.suptitle("Spectral Clustering: silhouette-optimal topologies vs. true diagnosis (selected features)")
+    fig.tight_layout()
+    fig.savefig(out_path)
     plt.show()
