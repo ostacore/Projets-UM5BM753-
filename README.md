@@ -45,8 +45,8 @@ to replace the pathologist, but to test whether these image-derived measurements
 support the diagnosis: a second, quantitative reading, particularly useful when the
 visual assessment is ambiguous. This is tested with two approaches:
 
-- **Q1 (supervised approach):** Can the 30 nuclear features reproduce the known diagnosis, and, once the redundant ones are removed, which of the remaining measurements matter most for that distinction?
-- **Q2 (unsupervised approach):** Without ever using the diagnostic labels, do the
+- **Supervised approach:** Can the 30 nuclear features reproduce the known diagnosis, and, once the redundant ones are removed, which of the remaining measurements matter most for that distinction?
+- **Unsupervised approach:** Without ever using the diagnostic labels, do the
   samples organize naturally into groups that reflect the benign/malignant divide?
 
 Recall and the F2-score (which weighs recall more than precision) get particular
