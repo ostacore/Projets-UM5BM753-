@@ -1,5 +1,5 @@
 origin,0,1
 Original - Benign,4,246
 Original - Malignant,131,17
-Prognostic - Missed (predicted benign),0,10
-Prognostic - Predicted malignant,175,13
+Prognostic - Missed (predicted benign),0,13
+Prognostic - Predicted malignant,175,10
