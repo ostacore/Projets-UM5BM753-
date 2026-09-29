@@ -108,6 +108,36 @@ def bootstrap_logreg_coefficients(model, X_train, y_train, feature_names, n_boot
     }).sort_values("coefficient", key=np.abs, ascending=False)
 
 
+def compute_logodds_contributions(model, selected_features, train_df_selected, X_wpbc_scaled_df, wpbc_status,
+                                  missed_index):
+    """Calculate the mean contribution of each feature to the Logistic Regression log-odds.
+
+    Extracts the model's coefficients and applies them to the standardized feature values
+    to compute the average log-odds impact for specific patient subgroups (Original Malignant,
+    WPBC Correct, WPBC Missed).
+    """
+    coefs = pd.Series(model.coef_[0], index=selected_features)
+    intercept = model.intercept_[0]
+
+    def mean_contribution(df_scaled):
+        return (df_scaled[selected_features] * coefs).mean()
+
+    contrib_original_malignant = mean_contribution(
+        train_df_selected[train_df_selected["diagnosis"] == "Original - Malignant"])
+    contrib_wpbc_correct = mean_contribution(
+        X_wpbc_scaled_df.loc[wpbc_status[wpbc_status == "Prognostic - Predicted malignant"].index])
+    contrib_wpbc_missed = mean_contribution(X_wpbc_scaled_df.loc[missed_index])
+
+    contrib_table = pd.DataFrame({
+        "Original - Malignant (train avg.)": contrib_original_malignant,
+        "Prognostic - Predicted malignant (avg.)": contrib_wpbc_correct,
+        "Prognostic - Missed (avg.)": contrib_wpbc_missed,
+    })
+    contrib_table.loc["intercept"] = intercept
+    contrib_table.loc["log-odds (sum)"] = contrib_table.drop(index="intercept").sum() + intercept
+
+    return contrib_table
+
 # Unsupervised models
 
 def evaluate_clusterers(clusterers: dict, X, y_true) -> pd.DataFrame:

@@ -240,6 +240,65 @@ def plot_feature_selection_plateau(sorted_n, sorted_recall, cv_folds, out_path):
     plt.savefig(out_path)
     plt.show()
 
+
+def plot_wpbc_feature_distributions(train_df_selected, X_wpbc_scaled_df, wpbc_status, selected_features, out_path):
+    """Plot original training distributions vs. external cohort feature values.
+
+    Displays a grid of boxplots for the original benign/malignant training cases,
+    overlaid with scatter points representing the external WPBC patients (colored
+    by whether the model correctly predicted them or missed them).
+    """
+    fig, axes = plt.subplots(2, 4, figsize=(18, 8))
+    axes = axes.flatten()
+
+    for i, (ax, feat) in enumerate(zip(axes, selected_features)):
+        sns.boxplot(
+            data=train_df_selected, x="diagnosis", y=feat, ax=ax,
+            order=["Original - Benign", "Original - Malignant"],
+            palette={"Original - Benign": "#4C72B0", "Original - Malignant": "#C44E52"},
+            showfliers=False,
+        )
+        for status, x_pos, color, marker, size in [
+            ("Prognostic - Predicted malignant", 1.15, "grey", "o", 20),
+            ("Prognostic - Missed (predicted benign)", 0.85, "black", "X", 70),
+        ]:
+            idx = wpbc_status[wpbc_status == status].index
+            ax.scatter(
+                np.full(len(idx), x_pos), X_wpbc_scaled_df.loc[idx, feat],
+                color=color, marker=marker, s=size, edgecolor="white", linewidth=0.5, zorder=5,
+                label=status if i == 0 else None,
+            )
+        ax.set_title(feat)
+        ax.set_xlabel("")
+
+    axes[-1].axis("off")
+    handles, labels = axes[0].get_legend_handles_labels()
+    fig.legend(handles, labels, loc="lower right", bbox_to_anchor=(0.98, 0.08))
+    fig.suptitle("Selected features (standardized): Original train distributions vs. Prognostic patients")
+    fig.tight_layout()
+    fig.savefig(out_path)
+    plt.show()
+
+
+def plot_logodds_contributions(contrib_table, out_path):
+    """Plot a bar chart of mean feature contributions to the log-odds decision.
+
+    Visualizes how much each standardized feature pushes the logistic regression
+    decision toward benign or malignant, comparing original training data against
+    correctly predicted and missed WPBC patients.
+    """
+    contrib_table.drop(index=["intercept", "log-odds (sum)"]).plot(
+        kind="bar", figsize=(11, 5), color=["#C44E52", "#8c8c8c", "#000000"]
+    )
+    plt.axhline(0, color="grey", linewidth=1)
+    plt.ylabel("Mean contribution to log-odds (coef x standardized value)")
+    plt.title("Why the model leans benign on the 13 missed Prognostic patients")
+    plt.xticks(rotation=30, ha="right")
+    plt.tight_layout()
+    plt.savefig(out_path)
+    plt.show()
+
+
 # Unsupervised models 
 
 def plot_silhouette_by_k(results: pd.DataFrame, out_path: str,
@@ -401,6 +460,39 @@ def plot_topology_comparison(final_models: dict, X_fit: np.ndarray, X_pca_2d: np
     axes[2].set_ylabel("PC2")
 
     fig.suptitle("Spectral Clustering: silhouette-optimal topologies vs. true diagnosis (selected features)")
+    fig.tight_layout()
+    fig.savefig(out_path)
+    plt.show()
+
+
+def plot_wpbc_spectral_clusters(X_pca_combined, cluster_labels, origin_labels, out_path):
+    """Plot Spectral Clustering results and patient origins on a 2D PCA projection.
+
+    Displays a side-by-side comparison of the unsupervised cluster assignments (left)
+    versus the actual patient cohorts and prediction outcomes (right) to verify if
+    missed patients naturally group with benign profiles.
+    """
+    fig, axes = plt.subplots(1, 2, figsize=(14, 6))
+    sns.scatterplot(x=X_pca_combined[:, 0], y=X_pca_combined[:, 1], hue=cluster_labels,
+                    palette={"Benign cluster (1)": "#4C72B0", "Malignant cluster (0)": "#C44E52"},
+                    ax=axes[0], alpha=0.7, edgecolor="k")
+    axes[0].set_title("Spectral Clustering (k-NN, n_neighbors=10)")
+    axes[0].set_xlabel("PC1")
+    axes[0].set_ylabel("PC2")
+
+    origin_palette = {
+        "Original - Benign": "#4C72B0",
+        "Original - Malignant": "#C44E52",
+        "Prognostic - Predicted malignant": "#9467BD",
+        "Prognostic - Missed (predicted benign)": "#FFFFFF",
+    }
+    sns.scatterplot(x=X_pca_combined[:, 0], y=X_pca_combined[:, 1], hue=origin_labels,
+                    palette=origin_palette, ax=axes[1], alpha=0.8, edgecolor="k")
+    axes[1].set_title("Origin: Original labels and Prognostic LogReg outcome")
+    axes[1].set_xlabel("PC1")
+    axes[1].set_ylabel("PC2")
+
+    fig.suptitle("Spectral Clustering on combined Original + Prognostic data (7 selected features)")
     fig.tight_layout()
     fig.savefig(out_path)
     plt.show()
