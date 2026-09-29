@@ -11,6 +11,9 @@ from sklearn.metrics import (silhouette_score, accuracy_score, precision_score,
                               recall_score, f1_score, fbeta_score, roc_auc_score,
                               make_scorer, homogeneity_score, completeness_score,
                               v_measure_score, adjusted_rand_score)
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LogisticRegression
+
 
 # Supervised models
 
@@ -77,6 +80,34 @@ def evaluate_classifier(model, X_train, y_train, X_test, y_test) -> dict:
         "roc_auc": roc_auc_score(y_test, y_score),
     }
 
+
+def bootstrap_logreg_coefficients(model, X_train, y_train, feature_names, n_bootstrap=1000, random_state=42):
+    """Estimate 95% confidence intervals for Logistic Regression coefficients via bootstrapping.
+
+    Resamples the training data with replacement and refits the model over multiple
+    iterations to compute the empirical 2.5th and 97.5th percentiles for each feature's
+    coefficient, assessing the stability of the learned weights.
+    """
+    coefs = pd.Series(model.coef_[0], index=feature_names)
+    rng = np.random.default_rng(random_state)
+    boot_coefs = np.empty((n_bootstrap, len(feature_names)))
+
+    for b in range(n_bootstrap):
+        idx = rng.integers(0, len(X_train), len(X_train))
+        boot_model = LogisticRegression(C=model.C, random_state=random_state, max_iter=5000)
+        boot_model.fit(X_train[idx], y_train[idx])
+        boot_coefs[b] = boot_model.coef_[0]
+
+    ci_low, ci_high = np.percentile(boot_coefs, [2.5, 97.5], axis=0)
+
+    return pd.DataFrame({
+        "coefficient": coefs,
+        "ci_low": ci_low,
+        "ci_high": ci_high,
+        "odds_ratio_per_SD": np.exp(coefs),
+    }).sort_values("coefficient", key=np.abs, ascending=False)
+
+
 # Unsupervised models
 
 def evaluate_clusterers(clusterers: dict, X, y_true) -> pd.DataFrame:
@@ -100,3 +131,5 @@ def evaluate_clusterers(clusterers: dict, X, y_true) -> pd.DataFrame:
                       "completeness": completeness, "v_measure": v_measure,
                       "ARI_vs_diagnosis": ari})
     return pd.DataFrame(rows)
+
+

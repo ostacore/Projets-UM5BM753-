@@ -171,6 +171,53 @@ def plot_confusion_matrices(classifiers: dict, X_tr, y_tr, X_te, y_te, out_path:
     fig.savefig(out_path, dpi=150)
     plt.show()
 
+
+def plot_1se_tuning_curve(res, best_C, one_se_C, cv_folds, out_path):
+    """Plot the cross-validation performance curve for hyperparameter C tuning.
+
+    Visualizes the mean cross-validation score across the tested logarithmic grid
+    of C values, placing vertical lines to contrast the absolute maximum score
+    against the more heavily regularized choice dictated by the 1-SE rule.
+    """
+
+    plt.figure(figsize=(9, 5))
+    plt.plot(res["param_C"].astype(float), res["mean_test_score"], marker='o', color='teal', alpha=0.85)
+    plt.axvline(best_C, linestyle=':', color='grey', alpha=0.7, label=f"Max Recall C = {best_C:.3f}")
+    plt.axvline(one_se_C, linestyle='--', color='crimson', alpha=0.9, label=f"1-SE Optimal C = {one_se_C:.3f}")
+    plt.xscale('log')
+    plt.title(f"Recall ({cv_folds}-fold CV) vs. C (Logistic Regression)")
+    plt.xlabel("C (log scale)")
+    plt.ylabel("Mean Recall (CV)")
+    plt.legend()
+    plt.grid(True, which='both', linestyle='--', alpha=0.5)
+    plt.tight_layout()
+    plt.savefig(out_path)
+    plt.show()
+
+
+def plot_bootstrap_coefficients(coef_table, out_path):
+    """Plot a horizontal bar chart of model coefficients with bootstrap confidence intervals.
+
+    Displays the magnitude and direction (positive/negative) of each feature's
+    contribution to the log-odds, including error bars derived from the 95%
+    bootstrap confidence intervals to visualize statistical stability.
+    """
+    plot_df = coef_table.iloc[::-1]
+    err_low = np.clip(plot_df["coefficient"] - plot_df["ci_low"], 0, None)
+    err_high = np.clip(plot_df["ci_high"] - plot_df["coefficient"], 0, None)
+
+    fig, ax = plt.subplots(figsize=(8, 5))
+    ax.barh(plot_df.index, plot_df["coefficient"],
+            color=np.where(plot_df["coefficient"] > 0, "#C44E52", "#4C72B0"), alpha=0.85,
+            xerr=[err_low, err_high], capsize=4)
+    ax.axvline(0, color="grey", linewidth=1)
+    ax.set_xlabel("Coefficient (log-odds change per +1 SD)")
+    ax.set_title("Logistic Regression coefficients (standardized features, 95% bootstrap CI)")
+    ax.grid(True, axis="x", linestyle="--", alpha=0.5)
+    fig.tight_layout()
+    fig.savefig(out_path)
+    plt.show()
+
 # Unsupervised models 
 
 def plot_silhouette_by_k(results: pd.DataFrame, out_path: str,

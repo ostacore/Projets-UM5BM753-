@@ -10,6 +10,10 @@ from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis, QuadraticDiscriminantAnalysis
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import GridSearchCV
+
 
 
 def get_baseline_classifiers(random_state: int = 42) -> dict:
@@ -33,3 +37,26 @@ def get_baseline_classifiers(random_state: int = 42) -> dict:
         # pairs have |r| > 0.95, see the correlation heatmap)
         "AdaBoost": AdaBoostClassifier(n_estimators=200, random_state=random_state),
     }
+
+
+def tune_logreg_with_1se(X, y, param_grid, cv_folds=10, random_state=42):
+    """Perform a cross-validated grid search for Logistic Regression and apply the 1-SE rule.
+
+    Tunes the regularization parameter C by maximizing the chosen scoring metric (recall),
+    then selects the simplest model (smallest C) whose mean score is within one
+    standard error of the absolute best score, ensuring stronger regularization.
+    """
+    grid_logreg = GridSearchCV(
+        LogisticRegression(random_state=random_state, max_iter=5000),
+        param_grid, cv=cv_folds, scoring='recall', n_jobs=-1
+    )
+    grid_logreg.fit(X, y)
+
+    res = pd.DataFrame(grid_logreg.cv_results_)
+    best_row = res.loc[res["mean_test_score"].idxmax()]
+    one_se_floor = best_row["mean_test_score"] - (best_row["std_test_score"] / np.sqrt(cv_folds))
+    one_se_C = res.loc[res["mean_test_score"] >= one_se_floor, "param_C"].astype(float).min()
+
+    return grid_logreg, res, one_se_C
+
+
