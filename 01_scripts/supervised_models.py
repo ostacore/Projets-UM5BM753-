@@ -13,7 +13,7 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis, QuadraticD
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import GridSearchCV
-
+from sklearn.model_selection import cross_validate
 
 
 def get_baseline_classifiers(random_state: int = 42) -> dict:
@@ -58,5 +58,40 @@ def tune_logreg_with_1se(X, y, param_grid, cv_folds=10, random_state=42):
     one_se_C = res.loc[res["mean_test_score"] >= one_se_floor, "param_C"].astype(float).min()
 
     return grid_logreg, res, one_se_C
+
+
+def benchmark_feature_selectors(selectors_dict, X_train, y_train, cv_folds, scoring_dict, random_state=42):
+    """Evaluate multiple feature selection methods using a baseline Logistic Regression.
+
+    Fits each selector to the training data, applies the resulting feature mask,
+    and cross-validates a baseline model on the reduced feature space. Returns a
+    DataFrame ranking the methods by a combined score of clinical performance
+    (Recall/F1/F2) and sparsity (fewer features preferred).
+    """
+    benchmark_rows = []
+    for name, selector in selectors_dict.items():
+        mask = selector.get_support()
+        cv_results = cross_validate(
+            LogisticRegression(random_state=random_state), X_train[:, mask], y_train,
+            cv=cv_folds, scoring=scoring_dict
+        )
+        benchmark_rows.append({
+            "model": name,
+            "n_features": int(mask.sum()),
+            "accuracy_mean": cv_results["test_accuracy"].mean(),
+            "precision_mean": cv_results["test_precision"].mean(),
+            "recall_mean": cv_results["test_recall"].mean(),
+            "f1_mean": cv_results["test_f1"].mean(),
+            "f2_mean": cv_results["test_f2"].mean(),
+            "roc_auc_mean": cv_results["test_roc_auc"].mean(),
+        })
+
+    df_benchmark = pd.DataFrame(benchmark_rows)
+    _ranking_metrics = ["recall_mean", "f1_mean", "f2_mean"]
+    ranks_perf = df_benchmark.set_index("model")[_ranking_metrics].rank(ascending=False)
+    ranks_feat = df_benchmark.set_index("model")["n_features"].rank(ascending=True)
+
+    df_benchmark["avg_rank_score"] = pd.concat([ranks_perf, ranks_feat], axis=1).mean(axis=1).values
+    return df_benchmark.sort_values("avg_rank_score")
 
 
