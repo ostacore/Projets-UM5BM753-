@@ -218,6 +218,27 @@ def plot_bootstrap_coefficients(coef_table, out_path):
     fig.savefig(out_path)
     plt.show()
 
+
+def plot_feature_selection_plateau(sorted_n, sorted_recall, cv_folds, out_path):
+    """Plot cross-validated recall against the number of selected features.
+
+    Visualizes the trade-off between model sparsity and diagnostic sensitivity
+    during L1-regularization sweeping, helping to identify the 'plateau' where
+    adding more features yields diminishing clinical returns.
+    """
+    plt.figure(figsize=(11, 5))
+    plt.plot(sorted_n, sorted_recall, marker='o', color='crimson', alpha=0.85)
+    plt.axhline(max(sorted_recall), linestyle='--', color='grey', alpha=0.5, label="Max recall")
+    plt.title(f"Recall ({cv_folds}-fold CV) vs. number of retained features (LogReg L1)")
+    plt.xlabel("Number of selected features")
+    plt.ylabel("Mean recall (CV)")
+    plt.xticks(np.arange(min(sorted_n), max(sorted_n) + 1, 1))
+    plt.legend()
+    plt.grid(True, linestyle='--', alpha=0.5)
+    plt.tight_layout()
+    plt.savefig(out_path)
+    plt.show()
+
 # Unsupervised models 
 
 def plot_silhouette_by_k(results: pd.DataFrame, out_path: str,
