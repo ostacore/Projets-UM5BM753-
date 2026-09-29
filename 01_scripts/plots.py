@@ -73,7 +73,8 @@ def plot_boxplots_by_diagnosis(dframe: pd.DataFrame, feature_list: list, out_pat
 
 
 def plot_pca_projection(X_scaled: np.ndarray, y: np.ndarray, out_path: str,
-                         random_state: int = 42):
+                         random_state: int = 42,
+                         title: str = "PCA projection of the 30 standardized features"):
     """2D PCA projection of the standardized data, colored by diagnosis."""
     pca_local = PCA(n_components=2, random_state=random_state)
     X_pca_local = pca_local.fit_transform(X_scaled)
@@ -86,7 +87,7 @@ def plot_pca_projection(X_scaled: np.ndarray, y: np.ndarray, out_path: str,
                      alpha=0.8, ax=ax)
     ax.set_xlabel(f"PC1 ({var_explained[0]*100:.1f}% variance)")
     ax.set_ylabel(f"PC2 ({var_explained[1]*100:.1f}% variance)")
-    ax.set_title("PCA projection of the 30 standardized features")
+    ax.set_title(title)
     fig.tight_layout()
     fig.savefig(out_path, dpi=150)
     plt.show()
