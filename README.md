@@ -54,6 +54,25 @@ attention throughout, since missing a malignant case is far more costly than fla
 a benign one for review. The dataset is also small, historical, and single-site, so
 any result here would need external validation before real clinical use.
 
+## Main findings
+
+- **Supervised.** Logistic Regression, tuned on the 7 selected features, misses only 3
+  malignant cases out of 64 (recall 95.3%) with no false alarm (precision 100%), and
+  still catches 93.4% of malignant cases on an external, unseen cohort (WPBC).
+- **Unsupervised.** Spectral Clustering recovers 2 natural groups that closely match
+  the diagnosis (ARI 0.792) without ever using the labels, and testing more clusters,
+  on the whole dataset and within each diagnosis class separately, finds no further
+  structure.
+- **Nuclear morphology alone is enough to both predict and reveal malignancy**. Reducing it to 7 non-redundant features, out of 30, sharpens both views at once, and the retained features align with criteria pathologists already use.
+- **Both approaches share the same blind spot:** the cases they each fail on look
+  genuinely closer to the opposite class on these 7 features, the same kind of
+  borderline cases pathologists themselves disagree on most. This project supports a
+  second opinion for the clear-cut majority, not a way to resolve the hardest, most
+  ambiguous cases.
+
+Full detail is in `03_notebooks/05_Zoom_LogReg.ipynb`,
+`06_Zoom_Spectral_Clustering.ipynb`, and `07_Prognostic_Data_Test.ipynb`.
+
 ## Project structure
 
 - `01_scripts/`: reusable Python functions, imported by the notebooks.
@@ -74,8 +93,9 @@ any result here would need external validation before real clinical use.
      model.
   6. `06_Zoom_Spectral_Clustering.ipynb`: tunes and evaluates the final Spectral
      Clustering model.
-  7. `07_Prognostic_Data_Test.ipynb`: checks whether the tuned model still
-     predicts malignant on an external cohort (WPBC).
+  7. `07_Prognostic_Data_Test.ipynb`: checks whether the tuned Logistic Regression,
+     and independently the Spectral Clustering, still recognize malignant cases on
+     an external cohort (WPBC).
 - `04_results/`: exported tables (`.csv`).
 - `05_figures/`: exported figures.
 - `06_report/`: written deliverables (slide exports, notes).
@@ -127,3 +147,7 @@ Ann-Solène Adelson, Anaïs Hluszko, Corentin Osta.
    extraction for breast tumor diagnosis. *Proceedings of SPIE*, 1905, 861–870.
 5. UCI Machine Learning Repository. *Breast Cancer Wisconsin (Diagnostic)*.
    https://doi.org/10.24432/C5DW2B
+6. Schirmer, E. C., & De Las Heras, J. I. (Eds.). (2014). *Cancer Biology and the
+   Nuclear Envelope: Recent Advances May Elucidate Past Paradoxes*. Advances in
+   Experimental Medicine and Biology, Vol. 773. Springer New York.
+   https://doi.org/10.1007/978-1-4899-8032-8
