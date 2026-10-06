@@ -1,114 +1,114 @@
 <?xml version='1.0' encoding='utf-8'?>
 <scheme version="2.0" title="" description="">
 	<nodes>
-		<node id="0" name="File" qualified_name="Orange.widgets.data.owfile.OWFile" project_name="Orange3" version="" title="File" position="(-169.41573033707868, 295.38202247191015)" />
-		<node id="1" name="Data Info" qualified_name="Orange.widgets.data.owdatainfo.OWDataInfo" project_name="Orange3" version="" title="Data Info" position="(120.56392347403583, 196.2696629213483)" />
-		<node id="2" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Data Table" position="(118.0, 394.1853932584268)" />
-		<node id="3" name="Distributions" qualified_name="Orange.widgets.visualize.owdistributions.OWDistributions" project_name="Orange3" version="" title="Distributions" position="(118.47058823529412, 490.63605891794913)" />
-		<node id="4" name="Column Statistics" qualified_name="Orange.widgets.data.owfeaturestatistics.OWFeatureStatistics" project_name="Orange3" version="" title="Column Statistics" position="(122.82629820832076, 101.97833065810595)" />
-		<node id="5" name="Constant" qualified_name="Orange.widgets.model.owconstant.OWConstant" project_name="Orange3" version="" title="Constant" position="(562.272905137235, 501.76085862820713)" />
-		<node id="6" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="Logistic Regression" position="(552.1851603873188, 603.7170805411797)" />
-		<node id="7" name="SVM" qualified_name="Orange.widgets.model.owsvm.OWSVM" project_name="Orange3" version="" title="SVM (RBF)" position="(555.1366411444791, 700.0855339571277)" />
-		<node id="8" name="Random Forest" qualified_name="Orange.widgets.model.owrandomforest.OWRandomForest" project_name="Orange3" version="" title="Random Forest" position="(560.3853719117138, 1003.9755228718751)" />
-		<node id="9" name="kNN" qualified_name="Orange.widgets.model.owknn.OWKNNLearner" project_name="Orange3" version="" title="kNN" position="(567.0857879601275, 1114.1198861465061)" />
-		<node id="10" name="Naive Bayes" qualified_name="Orange.widgets.model.ownaivebayes.OWNaiveBayes" project_name="Orange3" version="" title="Naive Bayes" position="(566.3102125223799, 1205.5994094838907)" />
-		<node id="11" name="Tree" qualified_name="Orange.widgets.model.owtree.OWTreeLearner" project_name="Orange3" version="" title="Tree" position="(569.0430657671626, 1310.499656916155)" />
-		<node id="12" name="Test and Score" qualified_name="Orange.widgets.evaluate.owtestandscore.OWTestAndScore" project_name="Orange3" version="" title="Test_Score_Screening_10fold" position="(808.7244227323048, 410.6411090806343)" />
-		<node id="13" name="Preprocess" qualified_name="Orange.widgets.data.owpreprocess.OWPreprocess" project_name="Orange3" version="" title="Imputation_Normalization" position="(556.5737294670245, 77.92928156828285)" />
-		<node id="14" name="ROC Analysis" qualified_name="Orange.widgets.evaluate.owrocanalysis.OWROCAnalysis" project_name="Orange3" version="" title="ROC_Screening" position="(1041.4608843151066, 365.94841621421045)" />
-		<node id="15" name="Confusion Matrix" qualified_name="Orange.widgets.evaluate.owconfusionmatrix.OWConfusionMatrix" project_name="Orange3" version="" title="Confusion_Matrix_Screening" position="(1040.6748600982912, 496.0775311139567)" />
-		<node id="16" name="Select Columns" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" project_name="Orange3" version="" title="DataSet_Unsupervised_Model" position="(-40.00000000000001, -1958.3333333333335)" />
-		<node id="17" name="k-Means" qualified_name="Orange.widgets.unsupervised.owkmeans.OWKMeans" project_name="Orange3" version="" title="k-Means-Silhouette search" position="(260.00000000000006, -1668.1666666666665)" />
-		<node id="18" name="k-Means" qualified_name="Orange.widgets.unsupervised.owkmeans.OWKMeans" project_name="Orange3" version="" title="k-Means - Fixed k=2" position="(1524.0, -873.6969696969697)" />
-		<node id="19" name="Silhouette Plot" qualified_name="Orange.widgets.visualize.owsilhouetteplot.OWSilhouettePlot" project_name="Orange3" version="" title="Silhouette Plot" position="(1822.2029598308657, -594.2367864693446)" />
-		<node id="20" name="PCA" qualified_name="Orange.widgets.unsupervised.owpca.OWPCA" project_name="Orange3" version="" title="PCA" position="(1823.5123326286114, -868.5454545454544)" />
-		<node id="21" name="Scatter Plot" qualified_name="Orange.widgets.visualize.owscatterplot.OWScatterPlot" project_name="Orange3" version="" title="PCA - colored by cluster" position="(2125.6053558844255, -880.1057082452435)" />
-		<node id="22" name="Scatter Plot" qualified_name="Orange.widgets.visualize.owscatterplot.OWScatterPlot" project_name="Orange3" version="" title="PCA -colored by diagnosis" position="(2124.7047216349547, -784.7329105003528)" />
-		<node id="23" name="Mosaic Display" qualified_name="Orange.widgets.visualize.owmosaic.OWMosaicDisplay" project_name="Orange3" version="" title="Mosaic Display" position="(1826.2255109231846, -968.2128259337561)" />
-		<node id="24" name="Python Script" qualified_name="Orange.widgets.data.owpythonscript.OWPythonScript" project_name="Orange3" version="" title="ARI / NMI — k-means" position="(1813.7885835095135, -487.52532236253126)" />
-		<node id="25" name="Distances" qualified_name="Orange.widgets.unsupervised.owdistances.OWDistances" project_name="Orange3" version="" title="Distances" position="(1046.6907308377895, -1232.2450980392155)" />
-		<node id="26" name="Hierarchical Clustering" qualified_name="Orange.widgets.unsupervised.owhierarchicalclustering.OWHierarchicalClustering" project_name="Orange3" version="" title="Hierarchical Clustering" position="(1182.5098039215688, -1233.372549019608)" />
-		<node id="27" name="Mosaic Display" qualified_name="Orange.widgets.visualize.owmosaic.OWMosaicDisplay" project_name="Orange3" version="" title="Mosaic Display (1)" position="(1389.4010695187171, -1128.1568627450977)" />
-		<node id="28" name="PCA" qualified_name="Orange.widgets.unsupervised.owpca.OWPCA" project_name="Orange3" version="" title="PCA (1)" position="(1384.7914438502667, -1228.4634581105174)" />
-		<node id="29" name="Scatter Plot" qualified_name="Orange.widgets.visualize.owscatterplot.OWScatterPlot" project_name="Orange3" version="" title="Scatter Plot" position="(1540.2994652406417, -1226.2174688057037)" />
-		<node id="30" name="Python Script" qualified_name="Orange.widgets.data.owpythonscript.OWPythonScript" project_name="Orange3" version="" title="ARI / NMI — hiérarchique" position="(1543.3262032085563, -1126.2683680132723)" />
-		<node id="31" name="Box Plot" qualified_name="Orange.widgets.visualize.owboxplot.OWBoxPlot" project_name="Orange3" version="" title="Box Plot" position="(1822.0831571529247, -776.6131078224099)" />
-		<node id="32" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Data Table (1)" position="(2119.670102184637, -670.9029686398876)" />
-		<node id="33" name="Transpose" qualified_name="Orange.widgets.data.owtranspose.OWTranspose" project_name="Orange3" version="" title="Transpose" position="(1820.2888477801262, -685.3876409443269)" />
-		<node id="34" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="Neural Network" position="(573.1210021321964, 1406.5664978678037)" />
-		<node id="35" name="Correlations" qualified_name="Orange.widgets.data.owcorrelations.OWCorrelations" project_name="Orange3" version="" title="Features_corelations" position="(-162.83582089552237, 1042.9850746268658)" />
-		<node id="36" name="PCA" qualified_name="Orange.widgets.unsupervised.owpca.OWPCA" project_name="Orange3" version="" title="PCA_Eploratory" position="(-33.2835820895522, 1037.0149253731342)" />
-		<node id="37" name="Scatter Plot" qualified_name="Orange.widgets.visualize.owscatterplot.OWScatterPlot" project_name="Orange3" version="" title="PCA_Exploratory_Scatter" position="(106.11940298507466, 1036.029850746269)" />
-		<node id="38" name="SVM" qualified_name="Orange.widgets.model.owsvm.OWSVM" project_name="Orange3" version="" title="SVM — noyau linéaire" position="(564.4924789441336, 795.2880215897735)" />
-		<node id="39" name="SVM" qualified_name="Orange.widgets.model.owsvm.OWSVM" project_name="Orange3" version="" title="SVM — noyau polynomial" position="(562.3077074942747, 894.0408670931058)" />
-		<node id="40" name="Data Sampler" qualified_name="Orange.widgets.data.owdatasampler.OWDataSampler" project_name="Orange3" version="" title="Stratification_70%_30%" position="(578.5096815988411, -64.78808112547308)" />
-		<node id="41" name="Rank" qualified_name="Orange.widgets.data.owrank.OWRank" project_name="Orange3" version="" title="Classement exploratoire — entraînement seul" position="(1509.4527863741766, -148.2262944536471)" />
-		<node id="42" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="Régression logistique 3, L2, C=0.04" position="(3392.8561056674516, 513.0709789140875)" />
-		<node id="43" name="Test and Score" qualified_name="Orange.widgets.evaluate.owtestandscore.OWTestAndScore" project_name="Orange3" version="" title="Test_Score_NN_10fold_Broadsearch" position="(1774.5598845598845, 597.2919672919672)" />
-		<node id="44" name="DBSCAN" qualified_name="Orange.widgets.unsupervised.owdbscan.OWDBSCAN" project_name="Orange3" version="" title="DBSCAN_2,5" position="(783.9438502673793, -1831.0383244206778)" />
-		<node id="45" name="PCA" qualified_name="Orange.widgets.unsupervised.owpca.OWPCA" project_name="Orange3" version="" title="ACP — DBSCAN" position="(1050.1960784313728, -1889.6368092691623)" />
-		<node id="46" name="Scatter Plot" qualified_name="Orange.widgets.visualize.owscatterplot.OWScatterPlot" project_name="Orange3" version="" title="ACP colorée par cluster — DBSCAN" position="(1204.5900178253123, -1890.176024955437)" />
-		<node id="47" name="Python Script" qualified_name="Orange.widgets.data.owpythonscript.OWPythonScript" project_name="Orange3" version="" title="ARI / NMI — DBSCAN" position="(1524.7703904178084, -1549.4063845050216)" />
-		<node id="48" name="Python Script" qualified_name="Orange.widgets.data.owpythonscript.OWPythonScript" project_name="Orange3" version="" title="Spectral_clustering_Parameters_comparison" position="(605.757575757576, -2611.363636363637)" />
-		<node id="49" name="PCA" qualified_name="Orange.widgets.unsupervised.owpca.OWPCA" project_name="Orange3" version="" title="ACP — spectral" position="(834.5011086474501, -2558.0192165558024)" />
-		<node id="50" name="Scatter Plot" qualified_name="Orange.widgets.visualize.owscatterplot.OWScatterPlot" project_name="Orange3" version="" title="ACP colorée par cluster — spectral" position="(1030.7731311985426, -2561.3461902060876)" />
-		<node id="51" name="Select Columns" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" project_name="Orange3" version="" title="DataSet_Supervised_Model" position="(123.64285714285721, 295.0714285714286)" />
-		<node id="52" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="LR_L1_C0.1_RankingFeatures" position="(1367.2038778590506, -260.13594237439963)" />
-		<node id="53" name="Select Columns" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" project_name="Orange3" version="" title="8 features - train" position="(1679.4841066027507, 5.57573311810598)" />
-		<node id="54" name="Select Columns" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" project_name="Orange3" version="" title="8 features - test" position="(1677.6707755521304, 89.32260457684183)" />
-		<node id="55" name="Test and Score" qualified_name="Orange.widgets.evaluate.owtestandscore.OWTestAndScore" project_name="Orange3" version="" title="Test_Score_LR_10fold_BroadSearch" position="(3628.4347616956316, 206.59464639974385)" />
-		<node id="56" name="Preprocess" qualified_name="Orange.widgets.data.owpreprocess.OWPreprocess" project_name="Orange3" version="" title="Preprocess" position="(1680.2144249512671, -94.55703434832303)" />
-		<node id="57" name="Data Info" qualified_name="Orange.widgets.data.owdatainfo.OWDataInfo" project_name="Orange3" version="" title="Data Info" position="(3778.978170717302, 84.03956751782832)" />
-		<node id="58" name="Data Info" qualified_name="Orange.widgets.data.owdatainfo.OWDataInfo" project_name="Orange3" version="" title="Data Info" position="(1913.8109538109525, 757.0484770484771)" />
-		<node id="59" name="Confusion Matrix" qualified_name="Orange.widgets.evaluate.owconfusionmatrix.OWConfusionMatrix" project_name="Orange3" version="" title="Confusion_Matrix_LR_BroadSearch" position="(3775.242905242906, 293.92370914110023)" />
-		<node id="60" name="Select Columns" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" project_name="Orange3" version="" title="Data_Nonredondant_features" position="(1057.1623347485424, -88.07600704152419)" />
-		<node id="61" name="Data Info" qualified_name="Orange.widgets.data.owdatainfo.OWDataInfo" project_name="Orange3" version="" title="Data Info" position="(1154.85312899106, -212.3692658175417)" />
-		<node id="62" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN1_ReLU_5" position="(1530.5129584790607, 583.263384449825)" />
-		<node id="63" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN2_ReLI_10" position="(1532.2078737332972, 685.0273518070129)" />
-		<node id="64" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN3_ReLU_20" position="(1537.4495560936234, 781.39270020626)" />
-		<node id="65" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN4_ReLU_10,5" position="(1534.0597255851499, 880.3945834454308)" />
-		<node id="66" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN5_tanh_10" position="(1537.763429288852, 980.1497623531523)" />
-		<node id="67" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="Régression logistique 2, L2, C=0.01" position="(3379.447809815378, 399.66268306201334)" />
-		<node id="68" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="Régression logistique 1, L2, C0.001" position="(3381.7666503950863, 302.41130874916973)" />
-		<node id="69" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="Régression logistique 4, L2, C=0.1" position="(3391.2469102651535, 645.3298494788052)" />
-		<node id="70" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="Régression logistique 5, L2, C=0.3" position="(3599.447809815378, 392.54624128290277)" />
-		<node id="71" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="Régression logistique 6, L2, C=1" position="(3615.0300187109297, 504.9800243913488)" />
-		<node id="72" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="Régression logistique 7, L2, C=10" position="(3607.478794323123, 644.0804741664613)" />
-		<node id="73" name="Test and Score" qualified_name="Orange.widgets.evaluate.owtestandscore.OWTestAndScore" project_name="Orange3" version="" title="Test_Score_LR_10Fold_affinedsearch" position="(4330.604697651175, 19.040479760119943)" />
-		<node id="74" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="LR_L2_C0.16" position="(4017.272727272728, 140.00000000000006)" />
-		<node id="75" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="LR_L2_C0.2" position="(4014.242424242424, 249.69696969696963)" />
-		<node id="76" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="LR_L2_C0.3" position="(4019.090909090909, 351.81818181818187)" />
-		<node id="77" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="LR_L2_C0.4" position="(4022.424242424242, 454.5454545454545)" />
-		<node id="78" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="LR_L2_C0.5" position="(4220.303030303031, 223.03030303030323)" />
-		<node id="79" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="LR_L2_C0.8" position="(4232.12121212121, 339.3939393939395)" />
-		<node id="80" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="LR_L2_C1" position="(4229.090909090908, 452.42424242424215)" />
-		<node id="81" name="Test and Score" qualified_name="Orange.widgets.evaluate.owtestandscore.OWTestAndScore" project_name="Orange3" version="" title="Test_Score_LR_testdata" position="(4202.546744036104, -389.7485493230174)" />
-		<node id="82" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="LR_L2_C0.5_Testdata_8features" position="(4058.57575757576, -253.33333333333314)" />
-		<node id="83" name="Confusion Matrix" qualified_name="Orange.widgets.evaluate.owconfusionmatrix.OWConfusionMatrix" project_name="Orange3" version="" title="Confusion_Matrix_LR_Testdata" position="(4416.758056758057, -443.80356358617263)" />
-		<node id="84" name="ROC Analysis" qualified_name="Orange.widgets.evaluate.owrocanalysis.OWROCAnalysis" project_name="Orange3" version="" title="ROC — test final (1)" position="(4430.051579626047, -266.7660393192309)" />
-		<node id="85" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN6_tanh_10,5" position="(1537.763429288852, 1076.0756882790781)" />
-		<node id="86" name="Test and Score" qualified_name="Orange.widgets.evaluate.owtestandscore.OWTestAndScore" project_name="Orange3" version="" title="Test_Score_NN_affinedsearch" position="(2216.9369369369356, 639.4744744744744)" />
-		<node id="87" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN4_ReLU_10,5_a0.0001" position="(2081.016247324281, 699.090235619344)" />
-		<node id="88" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN4_ReLU_10,5_a0.001" position="(2087.8278415271798, 799.6699457642716)" />
-		<node id="89" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN4_ReLU_10,5_a0.01" position="(2084.494508193846, 909.6699457642713)" />
-		<node id="90" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN4_ReLU_10,5_a0.1" position="(2074.4945081938463, 1006.3366124309382)" />
-		<node id="91" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN4_ReLU_10,5_a1" position="(2071.1611748605133, 1103.0032790976047)" />
-		<node id="92" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN4_ReLU_10,5_a0.1 _Testdata_30features" position="(2501.161174860513, 690.8046975373205)" />
-		<node id="93" name="Test and Score" qualified_name="Orange.widgets.evaluate.owtestandscore.OWTestAndScore" project_name="Orange3" version="" title="Test_Score_NN_Testdata" position="(2610.0, 593.8888888888893)" />
-		<node id="94" name="Confusion Matrix" qualified_name="Orange.widgets.evaluate.owconfusionmatrix.OWConfusionMatrix" project_name="Orange3" version="" title="Confusion_Matrix_NN_Testdata" position="(2728.5762385762378, 690.5903758077668)" />
-		<node id="95" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN4_ReLU_10,5_a0.1 _Testdata_8features" position="(4061.161174860512, -155.86196912934616)" />
-		<node id="96" name="Preprocess" qualified_name="Orange.widgets.data.owpreprocess.OWPreprocess" project_name="Orange3" version="" title="Imputation_Normalization (1)" position="(181.5737294670245, -1953.7373850983838)" />
-		<node id="97" name="Python Script" qualified_name="Orange.widgets.data.owpythonscript.OWPythonScript" project_name="Orange3" version="" title="Clustering_modelCompararison" position="(2671.800356506239, -1599.7348484848483)" />
-		<node id="98" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Data Table (2)" position="(2889.090909090909, -1594.2719881744267)" />
-		<node id="99" name="DBSCAN" qualified_name="Orange.widgets.unsupervised.owdbscan.OWDBSCAN" project_name="Orange3" version="" title="DBSCAN_2,20" position="(886.4893048128342, -1757.9830659536547)" />
-		<node id="100" name="DBSCAN" qualified_name="Orange.widgets.unsupervised.owdbscan.OWDBSCAN" project_name="Orange3" version="" title="DBSCAN_2,30" position="(969.1461675579321, -1690.0178253119436)" />
-		<node id="101" name="DBSCAN" qualified_name="Orange.widgets.unsupervised.owdbscan.OWDBSCAN" project_name="Orange3" version="" title="DBSCAN_2,40" position="(1065.581105169341, -1634.5454545454543)" />
-		<node id="102" name="DBSCAN" qualified_name="Orange.widgets.unsupervised.owdbscan.OWDBSCAN" project_name="Orange3" version="" title="DBSCAN_2,60" position="(1138.308377896614, -1566.060606060606)" />
-		<node id="103" name="DBSCAN" qualified_name="Orange.widgets.unsupervised.owdbscan.OWDBSCAN" project_name="Orange3" version="" title="DBSCAN_2,10" position="(1226.1871657754018, -1509.6969696969695)" />
-		<node id="104" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Data Table (3)" position="(1704.910569105691, -1549.3008130081294)" />
-		<node id="105" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Data Table (4)" position="(850.0, -2670.666666666667)" />
-		<node id="106" name="Python Script" qualified_name="Orange.widgets.data.owpythonscript.OWPythonScript" project_name="Orange3" version="" title="Spectral tuned (NN=15)" position="(602.0, -2498.0)" />
-		<node id="107" name="Python Script" qualified_name="Orange.widgets.data.owpythonscript.OWPythonScript" project_name="Orange3" version="" title="Spectral initial (NN=10)" position="(603.9215686274507, -2386.1788617886177)" />
+		<node id="0" name="File" qualified_name="Orange.widgets.data.owfile.OWFile" project_name="Orange3" version="" title="File" position="(-600, 300)" />
+		<node id="1" name="Data Info" qualified_name="Orange.widgets.data.owdatainfo.OWDataInfo" project_name="Orange3" version="" title="Data Info" position="(-300, 0)" />
+		<node id="2" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Data Table" position="(-300, 450)" />
+		<node id="3" name="Distributions" qualified_name="Orange.widgets.visualize.owdistributions.OWDistributions" project_name="Orange3" version="" title="Distributions" position="(-300, 300)" />
+		<node id="4" name="Column Statistics" qualified_name="Orange.widgets.data.owfeaturestatistics.OWFeatureStatistics" project_name="Orange3" version="" title="Column Statistics" position="(-300, 150)" />
+		<node id="5" name="Constant" qualified_name="Orange.widgets.model.owconstant.OWConstant" project_name="Orange3" version="" title="Constant" position="(450, 1200)" />
+		<node id="6" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="Logistic Regression" position="(450, 900)" />
+		<node id="7" name="SVM" qualified_name="Orange.widgets.model.owsvm.OWSVM" project_name="Orange3" version="" title="SVM (RBF)" position="(450, 1350)" />
+		<node id="8" name="Random Forest" qualified_name="Orange.widgets.model.owrandomforest.OWRandomForest" project_name="Orange3" version="" title="Random Forest" position="(450, 1500)" />
+		<node id="9" name="kNN" qualified_name="Orange.widgets.model.owknn.OWKNNLearner" project_name="Orange3" version="" title="kNN" position="(900, 1800)" />
+		<node id="10" name="Naive Bayes" qualified_name="Orange.widgets.model.ownaivebayes.OWNaiveBayes" project_name="Orange3" version="" title="Naive Bayes" position="(450, 1650)" />
+		<node id="11" name="Tree" qualified_name="Orange.widgets.model.owtree.OWTreeLearner" project_name="Orange3" version="" title="Tree" position="(450, 1800)" />
+		<node id="12" name="Test and Score" qualified_name="Orange.widgets.evaluate.owtestandscore.OWTestAndScore" project_name="Orange3" version="" title="Test_Score_Screening_10fold" position="(750, 1050)" />
+		<node id="13" name="Preprocess" qualified_name="Orange.widgets.data.owpreprocess.OWPreprocess" project_name="Orange3" version="" title="Imputation_Normalization" position="(600, 150)" />
+		<node id="14" name="ROC Analysis" qualified_name="Orange.widgets.evaluate.owrocanalysis.OWROCAnalysis" project_name="Orange3" version="" title="ROC_Screening" position="(900, 900)" />
+		<node id="15" name="Confusion Matrix" qualified_name="Orange.widgets.evaluate.owconfusionmatrix.OWConfusionMatrix" project_name="Orange3" version="" title="Confusion_Matrix_Screening" position="(900, 1200)" />
+		<node id="16" name="Select Columns" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" project_name="Orange3" version="" title="DataSet_Unsupervised_Model" position="(0, -1950)" />
+		<node id="17" name="k-Means" qualified_name="Orange.widgets.unsupervised.owkmeans.OWKMeans" project_name="Orange3" version="" title="k-Means-Silhouette search" position="(300, -1650)" />
+		<node id="18" name="k-Means" qualified_name="Orange.widgets.unsupervised.owkmeans.OWKMeans" project_name="Orange3" version="" title="k-Means - Fixed k=2" position="(5850, -2550)" />
+		<node id="19" name="Silhouette Plot" qualified_name="Orange.widgets.visualize.owsilhouetteplot.OWSilhouettePlot" project_name="Orange3" version="" title="Silhouette Plot" position="(6600, -2250)" />
+		<node id="20" name="PCA" qualified_name="Orange.widgets.unsupervised.owpca.OWPCA" project_name="Orange3" version="" title="PCA" position="(6150, -2550)" />
+		<node id="21" name="Scatter Plot" qualified_name="Orange.widgets.visualize.owscatterplot.OWScatterPlot" project_name="Orange3" version="" title="PCA - colored by cluster" position="(6450, -2700)" />
+		<node id="22" name="Scatter Plot" qualified_name="Orange.widgets.visualize.owscatterplot.OWScatterPlot" project_name="Orange3" version="" title="PCA -colored by diagnosis" position="(6450, -2550)" />
+		<node id="23" name="Mosaic Display" qualified_name="Orange.widgets.visualize.owmosaic.OWMosaicDisplay" project_name="Orange3" version="" title="Mosaic Display" position="(6450, -2850)" />
+		<node id="24" name="Python Script" qualified_name="Orange.widgets.data.owpythonscript.OWPythonScript" project_name="Orange3" version="" title="ARI / NMI — k-means" position="(6450, -2400)" />
+		<node id="25" name="Distances" qualified_name="Orange.widgets.unsupervised.owdistances.OWDistances" project_name="Orange3" version="" title="Distances" position="(4200, -2700)" />
+		<node id="26" name="Hierarchical Clustering" qualified_name="Orange.widgets.unsupervised.owhierarchicalclustering.OWHierarchicalClustering" project_name="Orange3" version="" title="Hierarchical Clustering" position="(4500, -2700)" />
+		<node id="27" name="Mosaic Display" qualified_name="Orange.widgets.visualize.owmosaic.OWMosaicDisplay" project_name="Orange3" version="" title="Mosaic Display (1)" position="(4500, -2550)" />
+		<node id="28" name="PCA" qualified_name="Orange.widgets.unsupervised.owpca.OWPCA" project_name="Orange3" version="" title="PCA (1)" position="(4650, -2700)" />
+		<node id="29" name="Scatter Plot" qualified_name="Orange.widgets.visualize.owscatterplot.OWScatterPlot" project_name="Orange3" version="" title="Scatter Plot" position="(4800, -2700)" />
+		<node id="30" name="Python Script" qualified_name="Orange.widgets.data.owpythonscript.OWPythonScript" project_name="Orange3" version="" title="ARI / NMI — hiérarchique" position="(4650, -2550)" />
+		<node id="31" name="Box Plot" qualified_name="Orange.widgets.visualize.owboxplot.OWBoxPlot" project_name="Orange3" version="" title="Box Plot" position="(6450, -2250)" />
+		<node id="32" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Data Table (1)" position="(6600, -2100)" />
+		<node id="33" name="Transpose" qualified_name="Orange.widgets.data.owtranspose.OWTranspose" project_name="Orange3" version="" title="Transpose" position="(6450, -2100)" />
+		<node id="34" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="Neural Network" position="(600, 1800)" />
+		<node id="35" name="Correlations" qualified_name="Orange.widgets.data.owcorrelations.OWCorrelations" project_name="Orange3" version="" title="Features_corelations" position="(-150, 600)" />
+		<node id="36" name="PCA" qualified_name="Orange.widgets.unsupervised.owpca.OWPCA" project_name="Orange3" version="" title="PCA_Eploratory" position="(-300, 600)" />
+		<node id="37" name="Scatter Plot" qualified_name="Orange.widgets.visualize.owscatterplot.OWScatterPlot" project_name="Orange3" version="" title="PCA_Exploratory_Scatter" position="(0, 600)" />
+		<node id="38" name="SVM" qualified_name="Orange.widgets.model.owsvm.OWSVM" project_name="Orange3" version="" title="SVM — noyau linéaire" position="(750, 1800)" />
+		<node id="39" name="SVM" qualified_name="Orange.widgets.model.owsvm.OWSVM" project_name="Orange3" version="" title="SVM — noyau polynomial" position="(450, 1050)" />
+		<node id="40" name="Data Sampler" qualified_name="Orange.widgets.data.owdatasampler.OWDataSampler" project_name="Orange3" version="" title="Stratification_70%_30%" position="(600, 0)" />
+		<node id="41" name="Rank" qualified_name="Orange.widgets.data.owrank.OWRank" project_name="Orange3" version="" title="Classement exploratoire — entraînement seul" position="(4950, 0)" />
+		<node id="42" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="Régression logistique 3, L2, C=0.04" position="(4500, 1500)" />
+		<node id="43" name="Test and Score" qualified_name="Orange.widgets.evaluate.owtestandscore.OWTestAndScore" project_name="Orange3" version="" title="Test_Score_NN_10fold_Broadsearch" position="(2100, 1200)" />
+		<node id="44" name="DBSCAN" qualified_name="Orange.widgets.unsupervised.owdbscan.OWDBSCAN" project_name="Orange3" version="" title="DBSCAN_2,5" position="(2550, -2700)" />
+		<node id="45" name="PCA" qualified_name="Orange.widgets.unsupervised.owpca.OWPCA" project_name="Orange3" version="" title="ACP — DBSCAN" position="(2850, -2700)" />
+		<node id="46" name="Scatter Plot" qualified_name="Orange.widgets.visualize.owscatterplot.OWScatterPlot" project_name="Orange3" version="" title="ACP colorée par cluster — DBSCAN" position="(3000, -2700)" />
+		<node id="47" name="Python Script" qualified_name="Orange.widgets.data.owpythonscript.OWPythonScript" project_name="Orange3" version="" title="ARI / NMI — DBSCAN" position="(3150, -2400)" />
+		<node id="48" name="Python Script" qualified_name="Orange.widgets.data.owpythonscript.OWPythonScript" project_name="Orange3" version="" title="Spectral_clustering_Parameters_comparison" position="(1800, -1200)" />
+		<node id="49" name="PCA" qualified_name="Orange.widgets.unsupervised.owpca.OWPCA" project_name="Orange3" version="" title="ACP — spectral" position="(1950, -900)" />
+		<node id="50" name="Scatter Plot" qualified_name="Orange.widgets.visualize.owscatterplot.OWScatterPlot" project_name="Orange3" version="" title="ACP colorée par cluster — spectral" position="(2100, -900)" />
+		<node id="51" name="Select Columns" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" project_name="Orange3" version="" title="DataSet_Supervised_Model" position="(-150, 300)" />
+		<node id="52" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="LR_L1_C0.1_RankingFeatures" position="(4800, -150)" />
+		<node id="53" name="Select Columns" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" project_name="Orange3" version="" title="8 features - train" position="(4650, 150)" />
+		<node id="54" name="Select Columns" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" project_name="Orange3" version="" title="8 features - test" position="(4350, 150)" />
+		<node id="55" name="Test and Score" qualified_name="Orange.widgets.evaluate.owtestandscore.OWTestAndScore" project_name="Orange3" version="" title="Test_Score_LR_10fold_BroadSearch" position="(4650, 1200)" />
+		<node id="56" name="Preprocess" qualified_name="Orange.widgets.data.owpreprocess.OWPreprocess" project_name="Orange3" version="" title="Preprocess" position="(4950, 150)" />
+		<node id="57" name="Data Info" qualified_name="Orange.widgets.data.owdatainfo.OWDataInfo" project_name="Orange3" version="" title="Data Info" position="(4800, 1200)" />
+		<node id="58" name="Data Info" qualified_name="Orange.widgets.data.owdatainfo.OWDataInfo" project_name="Orange3" version="" title="Data Info" position="(2250, 1500)" />
+		<node id="59" name="Confusion Matrix" qualified_name="Orange.widgets.evaluate.owconfusionmatrix.OWConfusionMatrix" project_name="Orange3" version="" title="Confusion_Matrix_LR_BroadSearch" position="(4800, 1350)" />
+		<node id="60" name="Select Columns" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" project_name="Orange3" version="" title="Data_Nonredondant_features" position="(4350, 0)" />
+		<node id="61" name="Data Info" qualified_name="Orange.widgets.data.owdatainfo.OWDataInfo" project_name="Orange3" version="" title="Data Info" position="(4500, -150)" />
+		<node id="62" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN1_ReLU_5" position="(1950, 1200)" />
+		<node id="63" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN2_ReLI_10" position="(1950, 1350)" />
+		<node id="64" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN3_ReLU_20" position="(1950, 1500)" />
+		<node id="65" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN4_ReLU_10,5" position="(1950, 1650)" />
+		<node id="66" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN5_tanh_10" position="(2100, 1800)" />
+		<node id="67" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="Régression logistique 2, L2, C=0.01" position="(4500, 1350)" />
+		<node id="68" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="Régression logistique 1, L2, C0.001" position="(4500, 1200)" />
+		<node id="69" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="Régression logistique 4, L2, C=0.1" position="(4500, 1650)" />
+		<node id="70" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="Régression logistique 5, L2, C=0.3" position="(4500, 1800)" />
+		<node id="71" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="Régression logistique 6, L2, C=1" position="(4650, 1650)" />
+		<node id="72" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="Régression logistique 7, L2, C=10" position="(4800, 1800)" />
+		<node id="73" name="Test and Score" qualified_name="Orange.widgets.evaluate.owtestandscore.OWTestAndScore" project_name="Orange3" version="" title="Test_Score_LR_10Fold_affinedsearch" position="(5400, 1200)" />
+		<node id="74" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="LR_L2_C0.16" position="(5250, 1350)" />
+		<node id="75" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="LR_L2_C0.2" position="(5250, 1500)" />
+		<node id="76" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="LR_L2_C0.3" position="(5250, 1650)" />
+		<node id="77" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="LR_L2_C0.4" position="(5400, 1650)" />
+		<node id="78" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="LR_L2_C0.5" position="(5250, 1800)" />
+		<node id="79" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="LR_L2_C0.8" position="(5400, 1800)" />
+		<node id="80" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="LR_L2_C1" position="(5550, 1800)" />
+		<node id="81" name="Test and Score" qualified_name="Orange.widgets.evaluate.owtestandscore.OWTestAndScore" project_name="Orange3" version="" title="Test_Score_LR_testdata" position="(6300, 1200)" />
+		<node id="82" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="LR_L2_C0.5_Testdata_8features" position="(6150, 1350)" />
+		<node id="83" name="Confusion Matrix" qualified_name="Orange.widgets.evaluate.owconfusionmatrix.OWConfusionMatrix" project_name="Orange3" version="" title="Confusion_Matrix_LR_Testdata" position="(6450, 1200)" />
+		<node id="84" name="ROC Analysis" qualified_name="Orange.widgets.evaluate.owrocanalysis.OWROCAnalysis" project_name="Orange3" version="" title="ROC — test final (1)" position="(6450, 1350)" />
+		<node id="85" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN6_tanh_10,5" position="(1950, 1800)" />
+		<node id="86" name="Test and Score" qualified_name="Orange.widgets.evaluate.owtestandscore.OWTestAndScore" project_name="Orange3" version="" title="Test_Score_NN_affinedsearch" position="(2550, 1350)" />
+		<node id="87" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN4_ReLU_10,5_a0.0001" position="(2400, 1350)" />
+		<node id="88" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN4_ReLU_10,5_a0.001" position="(2400, 1500)" />
+		<node id="89" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN4_ReLU_10,5_a0.01" position="(2400, 1650)" />
+		<node id="90" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN4_ReLU_10,5_a0.1" position="(2550, 1650)" />
+		<node id="91" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN4_ReLU_10,5_a1" position="(2700, 1650)" />
+		<node id="92" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN4_ReLU_10,5_a0.1 _Testdata_30features" position="(2850, 1350)" />
+		<node id="93" name="Test and Score" qualified_name="Orange.widgets.evaluate.owtestandscore.OWTestAndScore" project_name="Orange3" version="" title="Test_Score_NN_Testdata" position="(3000, 1350)" />
+		<node id="94" name="Confusion Matrix" qualified_name="Orange.widgets.evaluate.owconfusionmatrix.OWConfusionMatrix" project_name="Orange3" version="" title="Confusion_Matrix_NN_Testdata" position="(3150, 1350)" />
+		<node id="95" name="Neural Network" qualified_name="Orange.widgets.model.owneuralnetwork.OWNNLearner" project_name="Orange3" version="" title="NN4_ReLU_10,5_a0.1 _Testdata_8features" position="(6150, 1200)" />
+		<node id="96" name="Preprocess" qualified_name="Orange.widgets.data.owpreprocess.OWPreprocess" project_name="Orange3" version="" title="Imputation_Normalization (1)" position="(150, -1950)" />
+		<node id="97" name="Python Script" qualified_name="Orange.widgets.data.owpythonscript.OWPythonScript" project_name="Orange3" version="" title="Clustering_modelCompararison" position="(3450, -1050)" />
+		<node id="98" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Data Table (2)" position="(3750, -1050)" />
+		<node id="99" name="DBSCAN" qualified_name="Orange.widgets.unsupervised.owdbscan.OWDBSCAN" project_name="Orange3" version="" title="DBSCAN_2,20" position="(2550, -2550)" />
+		<node id="100" name="DBSCAN" qualified_name="Orange.widgets.unsupervised.owdbscan.OWDBSCAN" project_name="Orange3" version="" title="DBSCAN_2,30" position="(2550, -2400)" />
+		<node id="101" name="DBSCAN" qualified_name="Orange.widgets.unsupervised.owdbscan.OWDBSCAN" project_name="Orange3" version="" title="DBSCAN_2,40" position="(2700, -2250)" />
+		<node id="102" name="DBSCAN" qualified_name="Orange.widgets.unsupervised.owdbscan.OWDBSCAN" project_name="Orange3" version="" title="DBSCAN_2,60" position="(2550, -2250)" />
+		<node id="103" name="DBSCAN" qualified_name="Orange.widgets.unsupervised.owdbscan.OWDBSCAN" project_name="Orange3" version="" title="DBSCAN_2,10" position="(2550, -2100)" />
+		<node id="104" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Data Table (3)" position="(3300, -2400)" />
+		<node id="105" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Data Table (4)" position="(2100, -1200)" />
+		<node id="106" name="Python Script" qualified_name="Orange.widgets.data.owpythonscript.OWPythonScript" project_name="Orange3" version="" title="Spectral tuned (NN=15)" position="(1800, -900)" />
+		<node id="107" name="Python Script" qualified_name="Orange.widgets.data.owpythonscript.OWPythonScript" project_name="Orange3" version="" title="Spectral initial (NN=10)" position="(1950, -1200)" />
 	</nodes>
 	<links>
 		<link id="0" source_node_id="0" sink_node_id="1" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
@@ -241,6 +241,9 @@
 	<annotations>
 		<text id="0" type="text/plain" rect="(-299.7502435223067, -2101.118157023184, 336.0, 69.0)" font-family=".AppleSystemUIFont" font-size="16">Diagnosis was hidden as metadata and was not used to construct the clusters. It was retained only for comparison later</text>
 		<text id="1" type="text/plain" rect="(934.2857142857142, 575.4761904761906, 560.0, 105.0)" font-family=".AppleSystemUIFont" font-size="15"> </text>
+		<text id="2" type="text/plain" rect="(123.33333333333343, 1698.0, 150.0, 50.0)" font-family=".AppleSystemUIFont" font-size="16">Initial Screening : 10 models </text>
+		<text id="3" type="text/plain" rect="(2333.333333333333, 1971.3333333333335, 309.99999999999955, 88.99999999999977)" font-family=".AppleSystemUIFont" font-size="16">Tuning of the Neuronal Network modal</text>
+		<text id="4" type="text/plain" rect="(4865.784313725491, 1971.333333333333, 373.5294117647072, 155.76470588235247)" font-family=".AppleSystemUIFont" font-size="16">Tuning of the Logistique regression model</text>
 	</annotations>
 	<thumbnail />
 	<node_properties>
@@ -413,14 +416,13 @@ bmRleJRLAWgaSwF1aCdoKGgphpRoK12UKIwDU1ZNlIwIQ29uc3RhbnSUjBNMb2dpc3RpYyBSZWdy
 ZXNzaW9ulIwNUmFuZG9tIEZvcmVzdJSMA2tOTpSMC05haXZlIEJheWVzlIwEVHJlZZSMDk5ldXJh
 bCBOZXR3b3JrlIwNU1ZNIGxpbsOpYWlyZZSMDlNWTSBwb2x5bm9taWFslGV1YmV1Lg==
 </properties>
-		<properties node_id="15" format="pickle">gASVowEAAAAAAAB9lCiMEmFwcGVuZF9wcmVkaWN0aW9uc5SIjBRhcHBlbmRfcHJvYmFiaWxpdGll
+		<properties node_id="15" format="pickle">gASVbQEAAAAAAAB9lCiMEmFwcGVuZF9wcmVkaWN0aW9uc5SIjBRhcHBlbmRfcHJvYmFiaWxpdGll
 c5SJjAphdXRvY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNzYXZlZFdpZGdldEdlb21l
 dHJ5lENCAdnQywADAAAAAAImAAAAMgAABRMAAAGhAAACJgAAAE4AAAUTAAABoQAAAAAAAAAABaAA
-AAImAAAATgAABRMAAAGhlIwQc2VsZWN0ZWRfbGVhcm5lcpSMB2NvcHlyZWeUjA5fcmVjb25zdHJ1
-Y3RvcpSTlIwIYnVpbHRpbnOUjARsaXN0lJOUaA0ph5RSlEsAYYwRc2VsZWN0ZWRfcXVhbnRpdHmU
-SwCMC19fdmVyc2lvbl9flEsBjBBjb250ZXh0X3NldHRpbmdzlF2UjBVvcmFuZ2V3aWRnZXQuc2V0
-dGluZ3OUjAdDb250ZXh0lJOUKYGUfZQojAZ2YWx1ZXOUfZQojAlzZWxlY3Rpb26Uj5QoSwBLAIaU
-kGgRSwF1jAdjbGFzc2VzlIwBQpSMAU2UhpR1YmF1Lg==
+AAImAAAATgAABRMAAAGhlIwQc2VsZWN0ZWRfbGVhcm5lcpRdlEsAYYwRc2VsZWN0ZWRfcXVhbnRp
+dHmUSwCMC19fdmVyc2lvbl9flEsBjBBjb250ZXh0X3NldHRpbmdzlF2UjBVvcmFuZ2V3aWRnZXQu
+c2V0dGluZ3OUjAdDb250ZXh0lJOUKYGUfZQojAZ2YWx1ZXOUfZQojAlzZWxlY3Rpb26Uj5QoSwBL
+AIaUkGgKSwF1jAdjbGFzc2VzlIwBQpSMAU2UhpR1YmF1Lg==
 </properties>
 		<properties node_id="16" format="pickle">gASVMwUAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNpZ25v
 cmVfbmV3X2ZlYXR1cmVzlImME3NhdmVkV2lkZ2V0R2VvbWV0cnmUQ0IB2dDLAAMAAAAAAYYAAACU
@@ -709,8 +711,8 @@ jAVtZXRhc5R9lCiMAmlklEsCaC1LAmg0SwJ1dWJhdS4=
 		<properties node_id="40" format="literal">{'compatibility_mode': False, 'controlAreaVisible': True, 'number_of_folds': 10, 'replacement': False, 'sampleSizeNumber': 1, 'sampleSizePercentage': 70, 'sampleSizeSqlPercentage': 0.1, 'sampleSizeSqlTime': 1, 'sampling_type': 0, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02G\x00\x00\x00\xb3\x00\x00\x03E\x00\x00\x02|\x00\x00\x02G\x00\x00\x00\xcf\x00\x00\x03E\x00\x00\x02|\x00\x00\x00\x00\x02\x00\x00\x00\x05\xa0\x00\x00\x02G\x00\x00\x00\xcf\x00\x00\x03E\x00\x00\x02|', 'selectedFold': 1, 'sql_dl': False, 'stratify': True, 'use_seed': True, '__version__': 2}</properties>
 		<properties node_id="41" format="pickle">gASVvw0AAAAAAAB9lCiMCmF1dG9fYXBwbHmUiIwSY29udHJvbEFyZWFWaXNpYmxllIiME3NhdmVk
 V2lkZ2V0R2VvbWV0cnmUQ0IB2dDLAAMAAAAAAqgAAAChAAAFmAAAApwAAAKoAAAAvQAABZgAAAKc
-AAAAAAAAAAAFoAAAAqgAAAC9AAAFmAAAApyUjBBzZWxlY3RlZF9tZXRob2RzlI+UKIwVVW5pdmFy
-aWF0ZSBSZWdyZXNzaW9ulIwIUlJlbGllZkaUkIwHc29ydGluZ5RLAEsBhpSMC19fdmVyc2lvbl9f
+AAAAAAAAAAAFoAAAAqgAAAC9AAAFmAAAApyUjBBzZWxlY3RlZF9tZXRob2RzlI+UKIwIUlJlbGll
+ZkaUjBVVbml2YXJpYXRlIFJlZ3Jlc3Npb26UkIwHc29ydGluZ5RLAEsBhpSMC19fdmVyc2lvbl9f
 lEsEjBBjb250ZXh0X3NldHRpbmdzlF2UKIwVb3Jhbmdld2lkZ2V0LnNldHRpbmdzlIwHQ29udGV4
 dJSTlCmBlH2UKIwGdmFsdWVzlH2UKIwJblNlbGVjdGVklEsISv7///+GlIwOc2VsZWN0ZWRfYXR0
 cnOUXZQojAtyYWRpdXNfbWVhbpRLZoaUjBRjb25jYXZlX3BvaW50c193b3JzdJRLZoaUjA10ZXh0
@@ -807,7 +809,7 @@ dWJldS4=
 </properties>
 		<properties node_id="44" format="pickle">gASVMAEAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjANlcHOU
 jBZudW1weS5fY29yZS5tdWx0aWFycmF5lIwGc2NhbGFylJOUjAVudW1weZSMBWR0eXBllJOUjAJm
-OJSJiIeUUpQoSwOMATyUTk5OSv////9K/////0sAdJRiQwjRbuCJKwUEQJSGlFKUjAptZXRyaWNf
+OJSJiIeUUpQoSwOMATyUTk5OSv////9K/////0sAdJRiQwhEawGj5SwSQJSGlFKUjAptZXRyaWNf
 aWR4lEsAjAttaW5fc2FtcGxlc5RLBYwJbm9ybWFsaXpllIiME3NhdmVkV2lkZ2V0R2VvbWV0cnmU
 Q0IB2dDLAAMAAAAAATMAAACLAAAEWQAAApoAAAEzAAAApwAABFkAAAKaAAAAAAAAAAAFoAAAATMA
 AACnAAAEWQAAApqUjAtfX3ZlcnNpb25fX5RLAXUu
@@ -1216,14 +1218,13 @@ AEsChpR0lGhMaGpLAoaUhZRoUGhtSwGGlIWUdWJldS4=
 		<properties node_id="56" format="literal">{'autocommit': True, 'controlAreaVisible': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x01\x1e\x00\x00\x00\x89\x00\x00\x04k\x00\x00\x02\x98\x00\x00\x01\x1e\x00\x00\x00\xa5\x00\x00\x04k\x00\x00\x02\x98\x00\x00\x00\x00\x00\x00\x00\x00\x05\xa0\x00\x00\x01\x1e\x00\x00\x00\xa5\x00\x00\x04k\x00\x00\x02\x98', 'storedsettings': {'name': '', 'preprocessors': [('orange.preprocess.impute', {}), ('orange.preprocess.scale', {})]}, '__version__': 2}</properties>
 		<properties node_id="57" format="literal">{'controlAreaVisible': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02\n\x00\x00\x01!\x00\x00\x03\x82\x00\x00\x02A\x00\x00\x02\n\x00\x00\x01=\x00\x00\x03\x82\x00\x00\x02A\x00\x00\x00\x00\x02\x00\x00\x00\x05\xa0\x00\x00\x02\n\x00\x00\x01=\x00\x00\x03\x82\x00\x00\x02A', '__version__': 1}</properties>
 		<properties node_id="58" format="literal">{'controlAreaVisible': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02\n\x00\x00\x01!\x00\x00\x03\x82\x00\x00\x02A\x00\x00\x02\n\x00\x00\x01=\x00\x00\x03\x82\x00\x00\x02A\x00\x00\x00\x00\x02\x00\x00\x00\x05\xa0\x00\x00\x02\n\x00\x00\x01=\x00\x00\x03\x82\x00\x00\x02A', '__version__': 1}</properties>
-		<properties node_id="59" format="pickle">gASVmwEAAAAAAAB9lCiMEmFwcGVuZF9wcmVkaWN0aW9uc5SIjBRhcHBlbmRfcHJvYmFiaWxpdGll
+		<properties node_id="59" format="pickle">gASVZQEAAAAAAAB9lCiMEmFwcGVuZF9wcmVkaWN0aW9uc5SIjBRhcHBlbmRfcHJvYmFiaWxpdGll
 c5SJjAphdXRvY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNzYXZlZFdpZGdldEdlb21l
 dHJ5lENCAdnQywADAAAAAAAWAAAASgAAAwMAAAG5AAAAFgAAAGYAAAMDAAABuQAAAAAAAAAABaAA
-AAAWAAAAZgAAAwMAAAG5lIwQc2VsZWN0ZWRfbGVhcm5lcpSMB2NvcHlyZWeUjA5fcmVjb25zdHJ1
-Y3RvcpSTlIwIYnVpbHRpbnOUjARsaXN0lJOUaA0ph5RSlEsAYYwRc2VsZWN0ZWRfcXVhbnRpdHmU
-SwCMC19fdmVyc2lvbl9flEsBjBBjb250ZXh0X3NldHRpbmdzlF2UjBVvcmFuZ2V3aWRnZXQuc2V0
-dGluZ3OUjAdDb250ZXh0lJOUKYGUfZQojAZ2YWx1ZXOUfZQojAlzZWxlY3Rpb26Uj5RoEUsBdYwH
-Y2xhc3Nlc5SMAUKUjAFNlIaUdWJhdS4=
+AAAWAAAAZgAAAwMAAAG5lIwQc2VsZWN0ZWRfbGVhcm5lcpRdlEsAYYwRc2VsZWN0ZWRfcXVhbnRp
+dHmUSwCMC19fdmVyc2lvbl9flEsBjBBjb250ZXh0X3NldHRpbmdzlF2UjBVvcmFuZ2V3aWRnZXQu
+c2V0dGluZ3OUjAdDb250ZXh0lJOUKYGUfZQojAZ2YWx1ZXOUfZQojAlzZWxlY3Rpb26Uj5RoCksB
+dYwHY2xhc3Nlc5SMAUKUjAFNlIaUdWJhdS4=
 </properties>
 		<properties node_id="60" format="pickle">gASV8wUAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNpZ25v
 cmVfbmV3X2ZlYXR1cmVzlImME3NhdmVkV2lkZ2V0R2VvbWV0cnmUQ0IB2dDLAAMAAAAAAHwAAACU
@@ -1265,11 +1266,11 @@ hpR1Sv7///+GlGgHSwF1aHh9lChogEsCaINLAmiGSwJ1aHp9lChoiUsDaIxLA3V1YmV1Lg==
 		<properties node_id="70" format="literal">{'C_index': 68, 'auto_apply': True, 'class_weight': False, 'controlAreaVisible': True, 'learner_name': 'LR_L2_C0.3', 'penalty_type': 1, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02@\x00\x00\x00\xed\x00\x00\x03K\x00\x00\x026\x00\x00\x02@\x00\x00\x01\t\x00\x00\x03K\x00\x00\x026\x00\x00\x00\x00\x02\x00\x00\x00\x05\xa0\x00\x00\x02@\x00\x00\x01\t\x00\x00\x03K\x00\x00\x026', '__version__': 2}</properties>
 		<properties node_id="71" format="literal">{'C_index': 61, 'auto_apply': True, 'class_weight': False, 'controlAreaVisible': True, 'learner_name': 'LR_L2_C1', 'penalty_type': 1, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02@\x00\x00\x00\xed\x00\x00\x03K\x00\x00\x026\x00\x00\x02@\x00\x00\x01\t\x00\x00\x03K\x00\x00\x026\x00\x00\x00\x00\x02\x00\x00\x00\x05\xa0\x00\x00\x02@\x00\x00\x01\t\x00\x00\x03K\x00\x00\x026', '__version__': 2}</properties>
 		<properties node_id="72" format="literal">{'C_index': 52, 'auto_apply': True, 'class_weight': False, 'controlAreaVisible': True, 'learner_name': 'LR_L2_C10', 'penalty_type': 1, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02@\x00\x00\x00\xed\x00\x00\x03K\x00\x00\x026\x00\x00\x02@\x00\x00\x01\t\x00\x00\x03K\x00\x00\x026\x00\x00\x00\x00\x02\x00\x00\x00\x05\xa0\x00\x00\x02@\x00\x00\x01\t\x00\x00\x03K\x00\x00\x026', '__version__': 2}</properties>
-		<properties node_id="73" format="pickle">gASVxgQAAAAAAAB9lCiMFGNvbXBhcmlzb25fY3JpdGVyaW9ulEsAjBJjb250cm9sQXJlYVZpc2li
+		<properties node_id="73" format="pickle">gASVBQUAAAAAAAB9lCiMFGNvbXBhcmlzb25fY3JpdGVyaW9ulEsAjBJjb250cm9sQXJlYVZpc2li
 bGWUiIwNY3Zfc3RyYXRpZmllZJSIjAduX2ZvbGRzlEsDjAluX3JlcGVhdHOUSwOMCnJlc2FtcGxp
 bmeUSwCMBHJvcGWURz+5mZmZmZmajAtzYW1wbGVfc2l6ZZRLCYwTc2F2ZWRXaWRnZXRHZW9tZXRy
-eZRDQgHZ0MsAAwAAAAABTgAAAB8AAAWfAAAC1AAAAU4AAAA7AAAFnwAAAtQAAAAAAAAAAAWgAAAB
-TgAAADsAAAWfAAAC1JSMEnNodWZmbGVfc3RyYXRpZmllZJSIjAh1c2Vfcm9wZZSJjAtzY29yZV90
+eZRDQgHZ0MsAAwAAAAAAAAAAAAAAAAWfAAADgwAAAU4AAAA7AAAFnwAAAtQAAAAAAAQAAAWgAAAA
+AAAAAAAAAAWfAAADg5SMEnNodWZmbGVfc3RyYXRpZmllZJSIjAh1c2Vfcm9wZZSJjAtzY29yZV90
 YWJsZZR9lIwQc2hvd19zY29yZV9oaW50c5R9lCiMBk1vZGVsX5SIjAZUcmFpbl+UiYwFVGVzdF+U
 iYwCQ0GUiIwXUHJlY2lzaW9uUmVjYWxsRlN1cHBvcnSUiIwLVGFyZ2V0U2NvcmWUiIwJUHJlY2lz
 aW9ulIiMBlJlY2FsbJSIjAJGMZSIjANBVUOUiIwHTG9nTG9zc5SJjAtTcGVjaWZpY2l0eZSIjBdN
@@ -1283,10 +1284,11 @@ cmFkaXVzX21lYW6USwKGlIwUY29uY2F2ZV9wb2ludHNfd29yc3SUSwKGlIwNdGV4dHVyZV93b3Jz
 dJRLAoaUjAlyYWRpdXNfc2WUSwKGlIwQc21vb3RobmVzc193b3JzdJRLAoaUjBNjb25jYXZlX3Bv
 aW50c19tZWFulEsChpSMDnN5bW1ldHJ5X3dvcnN0lEsChpSMD2NvbmNhdml0eV93b3JzdJRLAoaU
 dJSMBW1ldGFzlIwCaWSUSwKGlIWUjApjbGFzc192YXJzlIwJZGlhZ25vc2lzlEsBhpSFlHViaC0p
-gZR9lChoMH2UKGgyaDNK/////4aUaDVOSv7///+GlGg3iUr+////hpRoDX2UaChLBHVoOihoO0sC
-hpRoPUsChpRoP0sChpRoQUsChpRoQ0sChpRoRUsChpRoR0sChpR0lGhMaE1LAoaUhZRoUGhRSwGG
-lIWUdWJoLSmBlH2UKGgwfZQoaDJoM0r/////hpRoNU5K/v///4aUaDeJSv7///+GlGgNfZRoKEsE
-dWg6aElLAoaUhZRoTGhNSwKGlIWUaFBoUUsBhpSFlHViZXUu
+gZR9lChoMH2UKIwPY2xhc3Nfc2VsZWN0aW9ulGgzSv////+GlIwMZm9sZF9mZWF0dXJllE5K/v//
+/4aUjBVmb2xkX2ZlYXR1cmVfc2VsZWN0ZWSUiUr+////hpSMC3Njb3JlX3RhYmxllH2UaChLBHVo
+OihoO0sChpRoPUsChpRoP0sChpRoQUsChpRoQ0sChpRoRUsChpRoR0sChpR0lGhMaE1LAoaUhZRo
+UGhRSwGGlIWUdWJoLSmBlH2UKGgwfZQoaFdoM0r/////hpRoWU5K/v///4aUaFuJSv7///+GlGhd
+fZRoKEsEdWg6aElLAoaUhZRoTGhNSwKGlIWUaFBoUUsBhpSFlHViZXUu
 </properties>
 		<properties node_id="74" format="literal">{'C_index': 91, 'auto_apply': True, 'class_weight': False, 'controlAreaVisible': True, 'learner_name': '', 'penalty_type': 1, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02@\x00\x00\x00\xed\x00\x00\x03K\x00\x00\x026\x00\x00\x02@\x00\x00\x01\t\x00\x00\x03K\x00\x00\x026\x00\x00\x00\x00\x02\x00\x00\x00\x05\xa0\x00\x00\x02@\x00\x00\x01\t\x00\x00\x03K\x00\x00\x026', '__version__': 2}</properties>
 		<properties node_id="75" format="literal">{'C_index': 69, 'auto_apply': True, 'class_weight': False, 'controlAreaVisible': True, 'learner_name': '', 'penalty_type': 1, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02@\x00\x00\x00\xed\x00\x00\x03K\x00\x00\x026\x00\x00\x02@\x00\x00\x01\t\x00\x00\x03K\x00\x00\x026\x00\x00\x00\x00\x02\x00\x00\x00\x05\xa0\x00\x00\x02@\x00\x00\x01\t\x00\x00\x03K\x00\x00\x026', '__version__': 2}</properties>
@@ -1319,14 +1321,13 @@ hpRoN4lK/v///4aUaA19lGgoSwR1aDooaDtLAoaUaD1LAoaUaD9LAoaUaEFLAoaUaENLAoaUaEVL
 AoaUaEdLAoaUdJRoTGhNSwKGlIWUaFBoUUsBhpSFlHViZXUu
 </properties>
 		<properties node_id="82" format="literal">{'C_index': 66, 'auto_apply': True, 'class_weight': False, 'controlAreaVisible': True, 'learner_name': '', 'penalty_type': 0, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02@\x00\x00\x00\xed\x00\x00\x03K\x00\x00\x026\x00\x00\x02@\x00\x00\x01\t\x00\x00\x03K\x00\x00\x026\x00\x00\x00\x00\x02\x00\x00\x00\x05\xa0\x00\x00\x02@\x00\x00\x01\t\x00\x00\x03K\x00\x00\x026', '__version__': 2}</properties>
-		<properties node_id="83" format="pickle">gASVmwEAAAAAAAB9lCiMEmFwcGVuZF9wcmVkaWN0aW9uc5SIjBRhcHBlbmRfcHJvYmFiaWxpdGll
+		<properties node_id="83" format="pickle">gASVZQEAAAAAAAB9lCiMEmFwcGVuZF9wcmVkaWN0aW9uc5SIjBRhcHBlbmRfcHJvYmFiaWxpdGll
 c5SJjAphdXRvY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNzYXZlZFdpZGdldEdlb21l
 dHJ5lENCAdnQywADAAAAAAAWAAAASgAAAwMAAAG5AAAAFgAAAGYAAAMDAAABuQAAAAAAAAAABaAA
-AAAWAAAAZgAAAwMAAAG5lIwQc2VsZWN0ZWRfbGVhcm5lcpSMB2NvcHlyZWeUjA5fcmVjb25zdHJ1
-Y3RvcpSTlIwIYnVpbHRpbnOUjARsaXN0lJOUaA0ph5RSlEsAYYwRc2VsZWN0ZWRfcXVhbnRpdHmU
-SwCMC19fdmVyc2lvbl9flEsBjBBjb250ZXh0X3NldHRpbmdzlF2UjBVvcmFuZ2V3aWRnZXQuc2V0
-dGluZ3OUjAdDb250ZXh0lJOUKYGUfZQojAZ2YWx1ZXOUfZQojAlzZWxlY3Rpb26Uj5RoEUsBdYwH
-Y2xhc3Nlc5SMAUKUjAFNlIaUdWJhdS4=
+AAAWAAAAZgAAAwMAAAG5lIwQc2VsZWN0ZWRfbGVhcm5lcpRdlEsAYYwRc2VsZWN0ZWRfcXVhbnRp
+dHmUSwCMC19fdmVyc2lvbl9flEsBjBBjb250ZXh0X3NldHRpbmdzlF2UjBVvcmFuZ2V3aWRnZXQu
+c2V0dGluZ3OUjAdDb250ZXh0lJOUKYGUfZQojAZ2YWx1ZXOUfZQojAlzZWxlY3Rpb26Uj5RoCksB
+dYwHY2xhc3Nlc5SMAUKUjAFNlIaUdWJhdS4=
 </properties>
 		<properties node_id="84" format="pickle">gASVjAYAAAAAAAB9lCiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBRkaXNwbGF5X2NvbnZleF9jdXJ2
 ZZSJjBNkaXNwbGF5X2NvbnZleF9odWxslImMFWRpc3BsYXlfZGVmX3RocmVzaG9sZJSIjBFkaXNw
@@ -1436,29 +1437,35 @@ dYwHY2xhc3Nlc5SMAUKUjAFNlIaUdWJhdS4=
 		<properties node_id="98" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x01\x8a\x00\x00\x00\xd3\x00\x00\x05\x9f\x00\x00\x02\xe2\x00\x00\x01\x8a\x00\x00\x00\xef\x00\x00\x05\x9f\x00\x00\x02\xe2\x00\x00\x00\x00\x00\x00\x00\x00\x05\xa0\x00\x00\x01\x8a\x00\x00\x00\xef\x00\x00\x05\x9f\x00\x00\x02\xe2', 'select_rows': True, 'show_attribute_labels': True, 'show_distributions': False, 'stored_selection': {'rows': [], 'columns': []}, 'stored_sort': [('ARI', -1)], '__version__': 1}</properties>
 		<properties node_id="99" format="pickle">gASVMAEAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjANlcHOU
 jBZudW1weS5fY29yZS5tdWx0aWFycmF5lIwGc2NhbGFylJOUjAVudW1weZSMBWR0eXBllJOUjAJm
-OJSJiIeUUpQoSwOMATyUTk5OSv////9K/////0sAdJRiQwh2dN5ZipcBQJSGlFKUjAptZXRyaWNf
+OJSJiIeUUpQoSwOMATyUTk5OSv////9K/////0sAdJRiQwhEawGj5SwSQJSGlFKUjAptZXRyaWNf
 aWR4lEsAjAttaW5fc2FtcGxlc5RLBYwJbm9ybWFsaXpllIiME3NhdmVkV2lkZ2V0R2VvbWV0cnmU
 Q0IB2dDLAAMAAAAAATMAAACLAAAEWQAAApoAAAEzAAAApwAABFkAAAKaAAAAAAAAAAAFoAAAATMA
 AACnAAAEWQAAApqUjAtfX3ZlcnNpb25fX5RLAXUu
 </properties>
 		<properties node_id="100" format="pickle">gASVMAEAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjANlcHOU
 jBZudW1weS5fY29yZS5tdWx0aWFycmF5lIwGc2NhbGFylJOUjAVudW1weZSMBWR0eXBllJOUjAJm
-OJSJiIeUUpQoSwOMATyUTk5OSv////9K/////0sAdJRiQwhKk54XrWoCQJSGlFKUjAptZXRyaWNf
+OJSJiIeUUpQoSwOMATyUTk5OSv////9K/////0sAdJRiQwhEawGj5SwSQJSGlFKUjAptZXRyaWNf
 aWR4lEsAjAttaW5fc2FtcGxlc5RLBYwJbm9ybWFsaXpllIiME3NhdmVkV2lkZ2V0R2VvbWV0cnmU
 Q0IB2dDLAAMAAAAAATMAAACKAAAEWQAAApkAAAEzAAAApgAABFkAAAKZAAAAAAAAAAAFoAAAATMA
 AACmAAAEWQAAApmUjAtfX3ZlcnNpb25fX5RLAXUu
 </properties>
 		<properties node_id="101" format="pickle">gASVMAEAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjANlcHOU
 jBZudW1weS5fY29yZS5tdWx0aWFycmF5lIwGc2NhbGFylJOUjAVudW1weZSMBWR0eXBllJOUjAJm
-OJSJiIeUUpQoSwOMATyUTk5OSv////9K/////0sAdJRiQwgTO7qAwDADQJSGlFKUjAptZXRyaWNf
+OJSJiIeUUpQoSwOMATyUTk5OSv////9K/////0sAdJRiQwhEawGj5SwSQJSGlFKUjAptZXRyaWNf
 aWR4lEsAjAttaW5fc2FtcGxlc5RLBYwJbm9ybWFsaXpllIiME3NhdmVkV2lkZ2V0R2VvbWV0cnmU
 Q0IB2dDLAAMAAAAAATMAAACKAAAEWQAAApkAAAEzAAAApgAABFkAAAKZAAAAAAAAAAAFoAAAATMA
 AACmAAAEWQAAApmUjAtfX3ZlcnNpb25fX5RLAXUu
 </properties>
-		<properties node_id="102" format="literal">{'auto_commit': True, 'controlAreaVisible': True, 'eps': 2.6, 'metric_idx': 0, 'min_samples': 5, 'normalize': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x013\x00\x00\x00\x8a\x00\x00\x04Y\x00\x00\x02\x99\x00\x00\x013\x00\x00\x00\xa6\x00\x00\x04Y\x00\x00\x02\x99\x00\x00\x00\x00\x00\x00\x00\x00\x05\xa0\x00\x00\x013\x00\x00\x00\xa6\x00\x00\x04Y\x00\x00\x02\x99', '__version__': 1}</properties>
+		<properties node_id="102" format="pickle">gASVMAEAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjANlcHOU
+jBZudW1weS5fY29yZS5tdWx0aWFycmF5lIwGc2NhbGFylJOUjAVudW1weZSMBWR0eXBllJOUjAJm
+OJSJiIeUUpQoSwOMATyUTk5OSv////9K/////0sAdJRiQwhEawGj5SwSQJSGlFKUjAptZXRyaWNf
+aWR4lEsAjAttaW5fc2FtcGxlc5RLBYwJbm9ybWFsaXpllIiME3NhdmVkV2lkZ2V0R2VvbWV0cnmU
+Q0IB2dDLAAMAAAAAATMAAACKAAAEWQAAApkAAAEzAAAApgAABFkAAAKZAAAAAAAAAAAFoAAAATMA
+AACmAAAEWQAAApmUjAtfX3ZlcnNpb25fX5RLAXUu
+</properties>
 		<properties node_id="103" format="pickle">gASVMAEAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjANlcHOU
 jBZudW1weS5fY29yZS5tdWx0aWFycmF5lIwGc2NhbGFylJOUjAVudW1weZSMBWR0eXBllJOUjAJm
-OJSJiIeUUpQoSwOMATyUTk5OSv////9K/////0sAdJRiQwj6uSUKcL0AQJSGlFKUjAptZXRyaWNf
+OJSJiIeUUpQoSwOMATyUTk5OSv////9K/////0sAdJRiQwhEawGj5SwSQJSGlFKUjAptZXRyaWNf
 aWR4lEsAjAttaW5fc2FtcGxlc5RLBYwJbm9ybWFsaXpllIiME3NhdmVkV2lkZ2V0R2VvbWV0cnmU
 Q0IB2dDLAAMAAAAAATMAAACKAAAEWQAAApkAAAEzAAAApgAABFkAAAKZAAAAAAAAAAAFoAAAATMA
 AACmAAAEWQAAApmUjAtfX3ZlcnNpb25fX5RLAXUu
