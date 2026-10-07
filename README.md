@@ -11,8 +11,4 @@ Orange3 counterpart to the Python component of UE 5BM753 (Ann-Solène Adelson, A
 - `workflow/`: the Orange3 workflow file (`Orange3_workflow.ows`).
 - `report/`: the written report (`Written_report_Orange3.pdf` and its `.docx` source).
 
-## Status
 
-`data/raw/`, `data/processed/`, and `workflow/` are populated with the real source datasets,
-the processed WPBC file, and the current Orange3 workflow. `report/` is an empty placeholder,
-to be filled in once the written report is produced.
